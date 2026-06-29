@@ -1,0 +1,6 @@
+{
+  "name": "CREALIA - Joyas Delicadas",
+  "description": "Catálogo de joyas delicadas, simples y personales para todos los días.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
