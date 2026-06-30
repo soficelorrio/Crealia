@@ -125,7 +125,7 @@ export default function Footer() {
                   rel="noreferrer"
                   className="font-sans text-xs sm:text-sm text-dark-soft/75 hover:text-taupe transition-colors"
                 >
-                  +{BRAND_CONFIG.whatsappNumber} <span className="text-[10px] text-dark-soft/40">(WhatsApp)</span>
+                  {BRAND_CONFIG.whatsappDisplay || `+${BRAND_CONFIG.whatsappNumber}`} <span className="text-[10px] text-dark-soft/40">(WhatsApp)</span>
                 </a>
               </li>
               <li className="flex items-center justify-center md:justify-start gap-2.5">

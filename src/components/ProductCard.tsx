@@ -6,10 +6,11 @@ import { useState } from 'react';
 
 interface ProductCardProps {
   product: Product;
+  onSelect: (product: Product) => void;
   key?: string | number;
 }
 
-export default function ProductCard({ product }: ProductCardProps) {
+export default function ProductCard({ product, onSelect }: ProductCardProps) {
   const [showDetails, setShowDetails] = useState(false);
 
   const queryMessage = BRAND_CONFIG.productInquiryMessage(product.name);
@@ -22,7 +23,8 @@ export default function ProductCard({ product }: ProductCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.6 }}
-      className="group relative flex flex-col bg-blanco-roto rounded-2xl overflow-hidden border border-gris-perla/20 transition-all duration-300 hover:shadow-xl hover:shadow-taupe/5"
+      onClick={() => onSelect(product)}
+      className="group relative flex flex-col bg-blanco-roto rounded-2xl overflow-hidden border border-gris-perla/20 transition-all duration-300 hover:shadow-xl hover:shadow-taupe/5 cursor-pointer"
     >
       {/* PRODUCT IMAGE CONTAINER */}
       <div className="relative aspect-square overflow-hidden bg-crema">
@@ -40,8 +42,11 @@ export default function ProductCard({ product }: ProductCardProps) {
         {/* DETAILS BUTTON OVERLAY */}
         {product.details && (
           <button
-            onClick={() => setShowDetails(!showDetails)}
-            className="absolute bottom-4 right-4 bg-blanco-roto/95 hover:bg-taupe hover:text-blanco-roto transition-colors p-2 rounded-full shadow shadow-dark-soft/5 text-taupe duration-300 cursor-pointer"
+            onClick={(e) => {
+              e.stopPropagation();
+              setShowDetails(!showDetails);
+            }}
+            className="absolute bottom-4 right-4 bg-blanco-roto/95 hover:bg-taupe hover:text-blanco-roto transition-colors p-2 rounded-full shadow shadow-dark-soft/5 text-taupe duration-300 cursor-pointer z-10"
             title="Ver especificaciones"
           >
             <Info size={16} />
@@ -66,10 +71,11 @@ export default function ProductCard({ product }: ProductCardProps) {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               className="mb-4 pt-3 border-t border-gris-perla/30 text-[11px] text-dark-soft/75 space-y-1"
+              onClick={(e) => e.stopPropagation()}
             >
               {product.details.map((detail, idx) => (
                 <div key={idx} className="flex items-center gap-1.5">
-                  <span className="w-1 h-1 rounded-full bg-taupe" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-taupe" />
                   <span>{detail}</span>
                 </div>
               ))}
@@ -90,6 +96,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             href={whatsappUrl}
             target="_blank"
             rel="noreferrer"
+            onClick={(e) => e.stopPropagation()}
             className="inline-flex items-center gap-1.5 bg-taupe hover:bg-taupe-dark text-blanco-roto px-4 py-2.5 rounded-full text-xs font-medium tracking-wider uppercase transition-colors duration-300"
           >
             <MessageCircle size={14} />

@@ -2,10 +2,13 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Sparkles } from 'lucide-react';
 import ProductCard from './ProductCard';
+import ProductDetailModal from './ProductDetailModal';
 import { PRODUCTS } from '../data/products';
+import { Product } from '../types';
 
 export default function ProductGrid() {
   const [activeTab, setActiveTab] = useState<'all' | 'necklace' | 'bracelet'>('all');
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   const filteredProducts = PRODUCTS.filter((product) => {
     if (activeTab === 'all') return true;
@@ -89,11 +92,21 @@ export default function ProductGrid() {
           >
             <AnimatePresence mode="popLayout">
               {filteredProducts.map((product) => (
-                <ProductCard key={product.id} product={product} />
+                <ProductCard key={product.id} product={product} onSelect={setSelectedProduct} />
               ))}
             </AnimatePresence>
           </motion.div>
         </div>
+
+        {/* DETALLE DE PRODUCTO EXPANDIDO (MODAL) */}
+        <AnimatePresence>
+          {selectedProduct && (
+            <ProductDetailModal
+              product={selectedProduct}
+              onClose={() => setSelectedProduct(null)}
+            />
+          )}
+        </AnimatePresence>
 
         {/* BOTTOM INFORMAL FOOTNOTE */}
         <div className="mt-12 text-center">

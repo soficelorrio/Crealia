@@ -6,6 +6,8 @@ export interface Product {
   pricePlaceholder: string;
   image: string;
   details?: string[];
+  material?: string;
+  dimensions?: string;
 }
 
 export interface CareItem {
