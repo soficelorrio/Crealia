@@ -1,7 +1,6 @@
 import { motion } from 'motion/react';
 import { ArrowRight, Instagram } from 'lucide-react';
 import { BRAND_CONFIG } from '../data/products';
-import collaresMixtos from '../assets/images/collares_mixtos.jpg';
 
 export default function Hero() {
   const instagramUrl = `https://instagram.com/${BRAND_CONFIG.instagram}`;
@@ -93,7 +92,7 @@ export default function Hero() {
               className="relative w-full max-w-md lg:max-w-none aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl shadow-taupe/10 border border-blanco-roto"
             >
               <img
-                src={collaresMixtos}
+                src="/images/inicio.jpg"
                 alt="Joyas delicadas CREALIA"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700 ease-out"

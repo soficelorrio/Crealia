@@ -1,6 +1,5 @@
 import { motion } from 'motion/react';
 import { Heart } from 'lucide-react';
-import logoCrealiaHistory from '../assets/images/logo_crealia_history.jpg';
 
 export default function About() {
   return (
@@ -18,7 +17,7 @@ export default function About() {
               className="relative w-full max-w-[280px] sm:max-w-xs aspect-square rounded-full overflow-hidden shadow-xl border-4 border-crema/40 bg-white"
             >
               <img
-                src={logoCrealiaHistory}
+                src="/images/historia.jpg"
                 alt="Logo CREALIA"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700 rounded-full"
