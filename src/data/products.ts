@@ -1,16 +1,16 @@
 import { Product } from '../types';
 
-import imgCollarHalo from '../assets/images/collar_halo.png';
-import imgCollarCalypso from '../assets/images/collar_calypso.png';
-import imgCollarElectra from '../assets/images/collar_electra.png';
-import imgPulseraSyra from '../assets/images/pulsera_syra.png';
-import imgCollarVolans from '../assets/images/collar_volans.png';
-import imgCollarLunna from '../assets/images/collar_lunna.png';
-import imgPulseraAstra from '../assets/images/pulsera_astra.png';
-import imgCollarAlaska from '../assets/images/collar_alaska.png';
-import imgPulseraNova from '../assets/images/pulsera_nova.png';
-import imgCollarNoctis from '../assets/images/collar_noctis.png';
-import imgCollarLove from '../assets/images/collar_love.png';
+import imgCollarHalo from '../assets/images/collar_halo.jpg';
+import imgCollarCalypso from '../assets/images/collar_calypso.jpg';
+import imgCollarElectra from '../assets/images/collar_electra.jpg';
+import imgPulseraSyra from '../assets/images/pulsera_syra.jpg';
+import imgCollarVolans from '../assets/images/collar_volans.jpg';
+import imgCollarLunna from '../assets/images/collar_lunna.jpg';
+import imgPulseraAstra from '../assets/images/pulsera_astra.jpg';
+import imgCollarAlaska from '../assets/images/collar_alaska.jpg';
+import imgPulseraNova from '../assets/images/pulsera_nova.jpg';
+import imgCollarNoctis from '../assets/images/collar_noctis.jpg';
+import imgCollarLove from '../assets/images/collar_love.jpg';
 
 // CONFIGURACIÓN DE CONTACTO Y REDES SOCIALES
 // Reemplazá estos valores con tus datos reales para activar los enlaces directos.

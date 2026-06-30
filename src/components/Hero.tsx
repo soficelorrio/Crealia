@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { ArrowRight, Instagram } from 'lucide-react';
 import { BRAND_CONFIG } from '../data/products';
-import collaresMixtos from '../assets/images/collares_mixtos.png';
+import collaresMixtos from '../assets/images/collares_mixtos.jpg';
 
 export default function Hero() {
   const instagramUrl = `https://instagram.com/${BRAND_CONFIG.instagram}`;
