@@ -1,5 +1,5 @@
 import { BRAND_CONFIG } from '../data/products';
-import { Instagram, MessageCircle, Mail, Heart, ArrowUp } from 'lucide-react';
+import { Instagram, MessageCircle, Heart, ArrowUp } from 'lucide-react';
 import Logo from './Logo';
 
 export default function Footer() {
@@ -126,15 +126,6 @@ export default function Footer() {
                   className="font-sans text-xs sm:text-sm text-dark-soft/75 hover:text-taupe transition-colors"
                 >
                   {BRAND_CONFIG.whatsappDisplay || `+${BRAND_CONFIG.whatsappNumber}`} <span className="text-[10px] text-dark-soft/40">(WhatsApp)</span>
-                </a>
-              </li>
-              <li className="flex items-center justify-center md:justify-start gap-2.5">
-                <Mail size={16} className="text-taupe shrink-0" />
-                <a
-                  href={`mailto:${BRAND_CONFIG.email}`}
-                  className="font-sans text-xs sm:text-sm text-dark-soft/75 hover:text-taupe transition-colors break-all"
-                >
-                  {BRAND_CONFIG.email}
                 </a>
               </li>
             </ul>

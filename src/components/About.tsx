@@ -14,16 +14,16 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.8 }}
-              className="relative w-full max-w-sm aspect-[4/5] rounded-3xl overflow-hidden shadow-lg border border-crema"
+              className="relative w-full max-w-[280px] sm:max-w-xs aspect-square rounded-full overflow-hidden shadow-xl border-4 border-crema/40 bg-white"
             >
               <img
-                src="/src/assets/images/joyas_detalle_1782771929275.jpg"
-                alt="Detalle de joyería CREALIA"
+                src="/src/assets/images/logo_crealia_history.jpg"
+                alt="Logo CREALIA"
                 referrerPolicy="no-referrer"
-                className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700 rounded-full"
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-taupe-dark/10 via-transparent to-transparent pointer-events-none" />
-              <div className="absolute top-4 right-4 bg-crema/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-[10px] font-medium tracking-[0.15em] text-taupe-dark">
+              <div className="absolute inset-0 bg-gradient-to-tr from-taupe-dark/15 via-transparent to-transparent pointer-events-none rounded-full" />
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-crema/95 backdrop-blur-sm px-3.5 py-1.5 rounded-full text-[9px] font-semibold tracking-[0.15em] text-taupe-dark shadow-sm whitespace-nowrap">
                 FILOSOFÍA SIMPLE
               </div>
             </motion.div>

@@ -14,7 +14,7 @@ export default function Logo({ className = '', size = '100%', color = 'currentCo
       <svg
         viewBox="0 0 100 100"
         width={size}
-        height={size}
+        height="auto"
         className={className}
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +35,7 @@ export default function Logo({ className = '', size = '100%', color = 'currentCo
     <svg
       viewBox="0 0 320 200"
       width={size}
-      height={size}
+      height="auto"
       className={className}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

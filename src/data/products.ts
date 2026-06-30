@@ -23,7 +23,7 @@ export const PRODUCTS: Product[] = [
     image: '/src/assets/images/collar_halo.png',
     details: ['Largo regulable', 'Material hipoalergénico', 'Diseño exclusivo con dijes colgantes'],
     material: 'Acero Inoxidable',
-    dimensions: '40 cm + 5 cm de extensor regulable'
+    dimensions: '38 cm'
   },
   {
     id: 'collar-calypso',
@@ -34,7 +34,7 @@ export const PRODUCTS: Product[] = [
     image: '/src/assets/images/collar_calypso.png',
     details: ['Dije de sol grabado', 'Estética minimalista', 'Largo intermedio ideal para layering'],
     material: 'Acero Inoxidable',
-    dimensions: '42 cm + 5 cm de extensor regulable'
+    dimensions: '41 cm + 4 cm de alargue'
   },
   {
     id: 'collar-electra',
@@ -45,7 +45,7 @@ export const PRODUCTS: Product[] = [
     image: '/src/assets/images/collar_electra.png',
     details: ['Cadena más larga', 'Dije de rayo moderno', 'Aporta un toque de actitud y brillo'],
     material: 'Acero Inoxidable',
-    dimensions: '45 cm + 5 cm de extensor regulable'
+    dimensions: '72 cm'
   },
   {
     id: 'pulsera-syra',
@@ -56,7 +56,7 @@ export const PRODUCTS: Product[] = [
     image: '/src/assets/images/pulsera_syra.png',
     details: ['Cadena ultrafina', 'Dije geométrico pulido', 'Cierre seguro y regulable'],
     material: 'Acero Inoxidable',
-    dimensions: '16 cm + 3 cm de cadena de alargue'
+    dimensions: '13 cuadraditos'
   },
   {
     id: 'collar-volans',
@@ -67,7 +67,7 @@ export const PRODUCTS: Product[] = [
     image: '/src/assets/images/collar_volans.png',
     details: ['Dije de ala calada', 'Brillo sutil', 'Ideal para usar todos los días'],
     material: 'Acero Inoxidable',
-    dimensions: '40 cm + 5 cm de extensor regulable'
+    dimensions: '44 cm'
   },
   {
     id: 'collar-lunna',
@@ -78,7 +78,7 @@ export const PRODUCTS: Product[] = [
     image: '/src/assets/images/collar_lunna.png',
     details: ['Dije de luna pulido', 'Estilo celestial y moderno', 'Ajustable a tu medida'],
     material: 'Acero Inoxidable',
-    dimensions: '40 cm + 5 cm de alargue'
+    dimensions: '42 cm'
   },
   {
     id: 'pulsera-astra',
@@ -89,7 +89,7 @@ export const PRODUCTS: Product[] = [
     image: '/src/assets/images/pulsera_astra.png',
     details: ['Estrellitas colgantes', 'Movimiento delicado', 'Ideal para combinar con el Collar Halo'],
     material: 'Acero Inoxidable',
-    dimensions: '16 cm + 3 cm de cadena de alargue'
+    dimensions: ''
   },
   {
     id: 'collar-alaska',
@@ -100,7 +100,7 @@ export const PRODUCTS: Product[] = [
     image: '/src/assets/images/collar_alaska.png',
     details: ['Dije geométrico exclusivo', 'Cadena reforzada sutil', 'Gran brillo y textura'],
     material: 'Acero Inoxidable',
-    dimensions: '42 cm + 5 cm de alargue regulable'
+    dimensions: ''
   },
   {
     id: 'pulsera-nova',
@@ -111,7 +111,7 @@ export const PRODUCTS: Product[] = [
     image: '/src/assets/images/pulsera_nova.png',
     details: ['Esferas minimalistas', 'Diseño moderno y ligero', 'Cierre de mosquetón seguro'],
     material: 'Acero Inoxidable',
-    dimensions: '16 cm + 3 cm de alargue'
+    dimensions: ''
   },
   {
     id: 'collar-noctis',
@@ -122,7 +122,7 @@ export const PRODUCTS: Product[] = [
     image: '/src/assets/images/collar_noctis.png',
     details: ['Diseño inspirado en la noche', 'Terminación pulida espejo', 'Cadena de alta calidad'],
     material: 'Acero Inoxidable',
-    dimensions: '45 cm + 5 cm de extensor'
+    dimensions: ''
   },
   {
     id: 'collar-love',
@@ -133,7 +133,7 @@ export const PRODUCTS: Product[] = [
     image: '/src/assets/images/collar_love.png',
     details: ['Dije de corazón sutil', 'Largo clásico regulable', 'Perfecto para llevar siempre con vos'],
     material: 'Acero Inoxidable',
-    dimensions: '40 cm + 5 cm de extensor regulable'
+    dimensions: ''
   }
 ];
 

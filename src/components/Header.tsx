@@ -54,7 +54,7 @@ export default function Header() {
               className="flex items-center justify-center transition-transform hover:scale-[1.02] duration-300"
               aria-label="CREALIA Inicio"
             >
-              <Logo size="110px" className="text-taupe-dark" />
+              <Logo className={`text-taupe-dark transition-all duration-300 ${isScrolled ? 'w-[110px] md:w-[130px]' : 'w-[130px] md:w-[165px]'}`} />
             </button>
           </div>
 
