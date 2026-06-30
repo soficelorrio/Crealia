@@ -1,5 +1,17 @@
 import { Product } from '../types';
 
+import imgCollarHalo from '../assets/images/collar_halo.png';
+import imgCollarCalypso from '../assets/images/collar_calypso.png';
+import imgCollarElectra from '../assets/images/collar_electra.png';
+import imgPulseraSyra from '../assets/images/pulsera_syra.png';
+import imgCollarVolans from '../assets/images/collar_volans.png';
+import imgCollarLunna from '../assets/images/collar_lunna.png';
+import imgPulseraAstra from '../assets/images/pulsera_astra.png';
+import imgCollarAlaska from '../assets/images/collar_alaska.png';
+import imgPulseraNova from '../assets/images/pulsera_nova.png';
+import imgCollarNoctis from '../assets/images/collar_noctis.png';
+import imgCollarLove from '../assets/images/collar_love.png';
+
 // CONFIGURACIÓN DE CONTACTO Y REDES SOCIALES
 // Reemplazá estos valores con tus datos reales para activar los enlaces directos.
 export const BRAND_CONFIG = {
@@ -20,7 +32,7 @@ export const PRODUCTS: Product[] = [
     category: 'necklace',
     description: 'Collar plateado con dijes de estrellas, delicado y luminoso.',
     pricePlaceholder: '$15.000',
-    image: '/src/assets/images/collar_halo.png',
+    image: imgCollarHalo,
     details: ['Largo regulable', 'Material hipoalergénico', 'Diseño exclusivo con dijes colgantes'],
     material: 'Acero Inoxidable',
     dimensions: '38 cm'
@@ -31,7 +43,7 @@ export const PRODUCTS: Product[] = [
     category: 'necklace',
     description: 'Collar plateado con dije de sol, inspirado en una estética celestial.',
     pricePlaceholder: '$12.000',
-    image: '/src/assets/images/collar_calypso.png',
+    image: imgCollarCalypso,
     details: ['Dije de sol grabado', 'Estética minimalista', 'Largo intermedio ideal para layering'],
     material: 'Acero Inoxidable',
     dimensions: '41 cm + 4 cm de alargue'
@@ -42,7 +54,7 @@ export const PRODUCTS: Product[] = [
     category: 'necklace',
     description: 'Collar largo plateado con dije de rayo, con una estética más intensa.',
     pricePlaceholder: '$15.000',
-    image: '/src/assets/images/collar_electra.png',
+    image: imgCollarElectra,
     details: ['Cadena más larga', 'Dije de rayo moderno', 'Aporta un toque de actitud y brillo'],
     material: 'Acero Inoxidable',
     dimensions: '72 cm'
@@ -53,7 +65,7 @@ export const PRODUCTS: Product[] = [
     category: 'bracelet',
     description: 'Pulsera plateada con dije central, simple y delicada.',
     pricePlaceholder: '$8.500',
-    image: '/src/assets/images/pulsera_syra.png',
+    image: imgPulseraSyra,
     details: ['Cadena ultrafina', 'Dije geométrico pulido', 'Cierre seguro y regulable'],
     material: 'Acero Inoxidable',
     dimensions: '13 cuadraditos'
@@ -64,7 +76,7 @@ export const PRODUCTS: Product[] = [
     category: 'necklace',
     description: 'Collar plateado con dije de ala, liviano y simbólico.',
     pricePlaceholder: '$12.000',
-    image: '/src/assets/images/collar_volans.png',
+    image: imgCollarVolans,
     details: ['Dije de ala calada', 'Brillo sutil', 'Ideal para usar todos los días'],
     material: 'Acero Inoxidable',
     dimensions: '44 cm'
@@ -75,7 +87,7 @@ export const PRODUCTS: Product[] = [
     category: 'necklace',
     description: 'Collar plateado con dije de media luna, un amuleto delicado para tu día a día.',
     pricePlaceholder: '$15.000',
-    image: '/src/assets/images/collar_lunna.png',
+    image: imgCollarLunna,
     details: ['Dije de luna pulido', 'Estilo celestial y moderno', 'Ajustable a tu medida'],
     material: 'Acero Inoxidable',
     dimensions: '42 cm'
@@ -86,7 +98,7 @@ export const PRODUCTS: Product[] = [
     category: 'bracelet',
     description: 'Pulsera plateada adornada con sutiles destellos de estrellas.',
     pricePlaceholder: '$8.500',
-    image: '/src/assets/images/pulsera_astra.png',
+    image: imgPulseraAstra,
     details: ['Estrellitas colgantes', 'Movimiento delicado', 'Ideal para combinar con el Collar Halo'],
     material: 'Acero Inoxidable',
     dimensions: ''
@@ -97,7 +109,7 @@ export const PRODUCTS: Product[] = [
     category: 'necklace',
     description: 'Collar plateado con dije facetado de diseño geométrico, elegante e imponente.',
     pricePlaceholder: '$18.000',
-    image: '/src/assets/images/collar_alaska.png',
+    image: imgCollarAlaska,
     details: ['Dije geométrico exclusivo', 'Cadena reforzada sutil', 'Gran brillo y textura'],
     material: 'Acero Inoxidable',
     dimensions: ''
@@ -108,7 +120,7 @@ export const PRODUCTS: Product[] = [
     category: 'bracelet',
     description: 'Pulsera plateada con esferas sutiles que atrapan la luz con delicadeza.',
     pricePlaceholder: '$8.500',
-    image: '/src/assets/images/pulsera_nova.png',
+    image: imgPulseraNova,
     details: ['Esferas minimalistas', 'Diseño moderno y ligero', 'Cierre de mosquetón seguro'],
     material: 'Acero Inoxidable',
     dimensions: ''
@@ -119,7 +131,7 @@ export const PRODUCTS: Product[] = [
     category: 'necklace',
     description: 'Collar plateado inspirado en el cielo nocturno, misterioso y elegante.',
     pricePlaceholder: '$18.000',
-    image: '/src/assets/images/collar_noctis.png',
+    image: imgCollarNoctis,
     details: ['Diseño inspirado en la noche', 'Terminación pulida espejo', 'Cadena de alta calidad'],
     material: 'Acero Inoxidable',
     dimensions: ''
@@ -130,7 +142,7 @@ export const PRODUCTS: Product[] = [
     category: 'necklace',
     description: 'Collar plateado con un delicado dije de corazón, un clásico con impronta minimalista.',
     pricePlaceholder: '$15.000',
-    image: '/src/assets/images/collar_love.png',
+    image: imgCollarLove,
     details: ['Dije de corazón sutil', 'Largo clásico regulable', 'Perfecto para llevar siempre con vos'],
     material: 'Acero Inoxidable',
     dimensions: ''
