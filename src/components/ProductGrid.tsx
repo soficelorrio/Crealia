@@ -86,16 +86,20 @@ export default function ProductGrid() {
 
         {/* PRODUCTS GRID */}
         <div className="min-h-[400px]">
-          <motion.div
-            layout
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8"
-          >
-            <AnimatePresence mode="popLayout">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeTab}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.25, ease: 'easeOut' }}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8"
+            >
               {filteredProducts.map((product) => (
                 <ProductCard key={product.id} product={product} onSelect={setSelectedProduct} />
               ))}
-            </AnimatePresence>
-          </motion.div>
+            </motion.div>
+          </AnimatePresence>
         </div>
 
         {/* DETALLE DE PRODUCTO EXPANDIDO (MODAL) */}

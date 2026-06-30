@@ -18,11 +18,10 @@ export default function ProductCard({ product, onSelect }: ProductCardProps) {
 
   return (
     <motion.div
-      layout
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 15 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-50px' }}
-      transition={{ duration: 0.6 }}
+      viewport={{ once: true, margin: '-40px' }}
+      transition={{ duration: 0.4, ease: 'easeOut' }}
       onClick={() => onSelect(product)}
       className="group relative flex flex-col bg-blanco-roto rounded-2xl overflow-hidden border border-gris-perla/20 transition-all duration-300 hover:shadow-xl hover:shadow-taupe/5 cursor-pointer"
     >
