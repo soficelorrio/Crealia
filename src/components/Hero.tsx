@@ -54,7 +54,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="font-sans text-base sm:text-lg text-dark-soft/90 max-w-xl mx-auto lg:mx-0 leading-relaxed mb-10"
             >
-              Collares y pulseras con una estética simple, femenina y personal.
+              Joyas para llevar un poco de magia todos los días.
             </motion.p>
 
             <motion.div
@@ -98,15 +98,6 @@ export default function Hero() {
                 className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700 ease-out"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-dark-soft/10 via-transparent to-transparent pointer-events-none" />
-              <div className="absolute bottom-4 left-4 right-4 bg-crema/90 backdrop-blur-sm border border-blanco-roto/40 p-4 rounded-xl flex items-center justify-between">
-                <div>
-                  <h3 className="font-serif text-sm text-taupe-dark font-medium">Básico Esencial</h3>
-                  <p className="font-sans text-xs text-dark-soft/70">Plata 925 & Diseños minimalistas</p>
-                </div>
-                <span className="font-sans text-[10px] tracking-widest uppercase text-taupe bg-blanco-roto px-2 py-1 rounded">
-                  CREALIA
-                </span>
-              </div>
             </motion.div>
           </div>
         </div>

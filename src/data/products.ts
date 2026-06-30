@@ -19,7 +19,7 @@ export const PRODUCTS: Product[] = [
     category: 'necklace',
     description: 'Collar plateado con dijes de estrellas, delicado y luminoso.',
     pricePlaceholder: '$15.000',
-    image: '/src/assets/images/collar_halo_exact_1782774516448.jpg',
+    image: '/src/assets/images/collar_halo.png',
     details: ['Largo regulable', 'Material hipoalergénico', 'Diseño exclusivo con dijes colgantes']
   },
   {
@@ -28,7 +28,7 @@ export const PRODUCTS: Product[] = [
     category: 'necklace',
     description: 'Collar plateado con dije de sol, inspirado en una estética celestial.',
     pricePlaceholder: '$12.000',
-    image: '/src/assets/images/collar_calypso_exact_1782774634777.jpg',
+    image: '/src/assets/images/collar_calypso.png',
     details: ['Dije de sol grabado', 'Estética minimalista', 'Largo intermedio ideal para layering']
   },
   {
@@ -37,7 +37,7 @@ export const PRODUCTS: Product[] = [
     category: 'necklace',
     description: 'Collar largo plateado con dije de rayo, con una estética más intensa.',
     pricePlaceholder: '$15.000',
-    image: '/src/assets/images/collar_estilo_1782771909040.jpg',
+    image: '/src/assets/images/collar_electra.png',
     details: ['Cadena más larga', 'Dije de rayo moderno', 'Aporta un toque de actitud y brillo']
   },
   {
@@ -46,7 +46,7 @@ export const PRODUCTS: Product[] = [
     category: 'bracelet',
     description: 'Pulsera plateada con dije central, simple y delicada.',
     pricePlaceholder: '$8.500',
-    image: '/src/assets/images/pulsera_estilo_1782771918588.jpg',
+    image: '/src/assets/images/pulsera_syra.png',
     details: ['Cadena ultrafina', 'Dije geométrico pulido', 'Cierre seguro y regulable']
   },
   {
@@ -55,7 +55,7 @@ export const PRODUCTS: Product[] = [
     category: 'necklace',
     description: 'Collar plateado con dije de ala, liviano y simbólico.',
     pricePlaceholder: '$12.000',
-    image: '/src/assets/images/collar_minimalista_1782774011460.jpg',
+    image: '/src/assets/images/collar_volans.png',
     details: ['Dije de ala calada', 'Brillo sutil', 'Ideal para usar todos los días']
   },
   {
@@ -73,7 +73,7 @@ export const PRODUCTS: Product[] = [
     category: 'bracelet',
     description: 'Pulsera plateada adornada con sutiles destellos de estrellas.',
     pricePlaceholder: '$8.500',
-    image: '/src/assets/images/pulsera_delicada_1782774023523.jpg',
+    image: '/src/assets/images/pulsera_astra.png',
     details: ['Estrellitas colgantes', 'Movimiento delicado', 'Ideal para combinar con el Collar Halo']
   },
   {
@@ -91,7 +91,7 @@ export const PRODUCTS: Product[] = [
     category: 'bracelet',
     description: 'Pulsera plateada con esferas sutiles que atrapan la luz con delicadeza.',
     pricePlaceholder: '$8.500',
-    image: '/src/assets/images/pulsera_estilo_1782771918588.jpg',
+    image: '/src/assets/images/pulsera_nova.png',
     details: ['Esferas minimalistas', 'Diseño moderno y ligero', 'Cierre de mosquetón seguro']
   },
   {
@@ -109,7 +109,7 @@ export const PRODUCTS: Product[] = [
     category: 'necklace',
     description: 'Collar plateado con un delicado dije de corazón, un clásico con impronta minimalista.',
     pricePlaceholder: '$15.000',
-    image: '/src/assets/images/collar_minimalista_1782774011460.jpg',
+    image: '/src/assets/images/collar_love.png',
     details: ['Dije de corazón sutil', 'Largo clásico regulable', 'Perfecto para llevar siempre con vos']
   }
 ];
