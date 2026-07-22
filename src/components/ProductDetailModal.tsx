@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, MessageCircle, Instagram, Ruler, Sparkles, ChevronRight } from 'lucide-react';
+import { X, MessageCircle, Instagram, Ruler, ChevronRight } from 'lucide-react';
 import { Product } from '../types';
 import { BRAND_CONFIG } from '../data/products';
 
@@ -101,37 +101,21 @@ export default function ProductDetailModal({ product, onClose }: ProductDetailMo
             </div>
 
             {/* SPECIFICATIONS GRID */}
-            <div className="space-y-4 py-5 border-t border-b border-gris-perla/20 mb-6">
-              {/* MATERIAL */}
-              {product.material && (
-                <div className="flex items-start gap-3">
-                  <div className="p-1.5 rounded-lg bg-blanco-roto border border-gris-perla/20 text-taupe mt-0.5">
-                    <Sparkles size={14} />
-                  </div>
-                  <div>
-                    <span className="block text-[11px] font-sans tracking-wider text-dark-soft/50 uppercase">Material</span>
-                    <span className="font-sans text-xs sm:text-sm text-taupe-dark font-medium">
-                      {product.material}
-                    </span>
-                  </div>
-                </div>
-              )}
-
-              {/* DIMENSIONS */}
-              {product.dimensions && (
+            {product.dimensions && (
+              <div className="space-y-4 py-5 border-t border-b border-gris-perla/20 mb-6">
                 <div className="flex items-start gap-3">
                   <div className="p-1.5 rounded-lg bg-blanco-roto border border-gris-perla/20 text-taupe mt-0.5">
                     <Ruler size={14} />
                   </div>
                   <div>
-                    <span className="block text-[11px] font-sans tracking-wider text-dark-soft/50 uppercase">Medidas</span>
+                    <span className="block text-[11px] font-sans tracking-wider text-dark-soft/50">Medida</span>
                     <span className="font-sans text-xs sm:text-sm text-taupe-dark font-medium">
                       {product.dimensions}
                     </span>
                   </div>
                 </div>
-              )}
-            </div>
+              </div>
+            )}
 
             {/* ADDITIONAL HIGHLIGHTS */}
             {product.details && product.details.length > 0 && (

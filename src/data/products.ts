@@ -21,9 +21,8 @@ export const PRODUCTS: Product[] = [
     description: 'Collar plateado con dijes de estrellas, delicado y luminoso.',
     pricePlaceholder: '$15.000',
     image: '/images/collar_halo.jpg',
-    details: ['Largo regulable', 'Material hipoalergénico', 'Diseño exclusivo con dijes colgantes'],
-    material: 'Acero Inoxidable',
-    dimensions: '38 cm'
+    details: ['Largo regulable', 'Sutil y confortable', 'Diseño exclusivo con dijes colgantes'],
+    dimensions: '38,5 cm'
   },
   {
     id: 'collar-calypso',
@@ -33,8 +32,7 @@ export const PRODUCTS: Product[] = [
     pricePlaceholder: '$12.000',
     image: '/images/collar_calypso.jpg',
     details: ['Dije de sol grabado', 'Estética minimalista', 'Largo intermedio ideal para layering'],
-    material: 'Acero Inoxidable',
-    dimensions: '41 cm + 4 cm de alargue'
+    dimensions: '43 cm'
   },
   {
     id: 'collar-electra',
@@ -44,8 +42,7 @@ export const PRODUCTS: Product[] = [
     pricePlaceholder: '$15.000',
     image: '/images/collar_electra.jpg',
     details: ['Cadena más larga', 'Dije de rayo moderno', 'Aporta un toque de actitud y brillo'],
-    material: 'Acero Inoxidable',
-    dimensions: '72 cm'
+    dimensions: '46 cm'
   },
   {
     id: 'pulsera-syra',
@@ -55,8 +52,7 @@ export const PRODUCTS: Product[] = [
     pricePlaceholder: '$8.500',
     image: '/images/pulsera_syra.jpg',
     details: ['Cadena ultrafina', 'Dije geométrico pulido', 'Cierre seguro y regulable'],
-    material: 'Acero Inoxidable',
-    dimensions: '13 cuadraditos'
+    dimensions: '19 cm'
   },
   {
     id: 'collar-volans',
@@ -66,7 +62,6 @@ export const PRODUCTS: Product[] = [
     pricePlaceholder: '$12.000',
     image: '/images/collar_volans.jpg',
     details: ['Dije de ala calada', 'Brillo sutil', 'Ideal para usar todos los días'],
-    material: 'Acero Inoxidable',
     dimensions: '44 cm'
   },
   {
@@ -77,8 +72,7 @@ export const PRODUCTS: Product[] = [
     pricePlaceholder: '$15.000',
     image: '/images/collar_lunna.jpg',
     details: ['Dije de luna pulido', 'Estilo celestial y moderno', 'Ajustable a tu medida'],
-    material: 'Acero Inoxidable',
-    dimensions: '42 cm'
+    dimensions: '41 cm'
   },
   {
     id: 'pulsera-astra',
@@ -88,8 +82,7 @@ export const PRODUCTS: Product[] = [
     pricePlaceholder: '$8.500',
     image: '/images/pulsera_astra.jpg',
     details: ['Estrellitas colgantes', 'Movimiento delicado', 'Ideal para combinar con el Collar Halo'],
-    material: 'Acero Inoxidable',
-    dimensions: ''
+    dimensions: '19 cm'
   },
   {
     id: 'collar-alaska',
@@ -99,8 +92,7 @@ export const PRODUCTS: Product[] = [
     pricePlaceholder: '$18.000',
     image: '/images/collar_alaska.jpg',
     details: ['Dije geométrico exclusivo', 'Cadena reforzada sutil', 'Gran brillo y textura'],
-    material: 'Acero Inoxidable',
-    dimensions: ''
+    dimensions: '47 cm'
   },
   {
     id: 'pulsera-nova',
@@ -110,8 +102,7 @@ export const PRODUCTS: Product[] = [
     pricePlaceholder: '$8.500',
     image: '/images/pulsera_nova.jpg',
     details: ['Esferas minimalistas', 'Diseño moderno y ligero', 'Cierre de mosquetón seguro'],
-    material: 'Acero Inoxidable',
-    dimensions: ''
+    dimensions: '19 cm'
   },
   {
     id: 'collar-noctis',
@@ -121,8 +112,7 @@ export const PRODUCTS: Product[] = [
     pricePlaceholder: '$18.000',
     image: '/images/collar_noctis.jpg',
     details: ['Diseño inspirado en la noche', 'Terminación pulida espejo', 'Cadena de alta calidad'],
-    material: 'Acero Inoxidable',
-    dimensions: ''
+    dimensions: '67,5 cm'
   },
   {
     id: 'collar-love',
@@ -132,8 +122,7 @@ export const PRODUCTS: Product[] = [
     pricePlaceholder: '$15.000',
     image: '/images/collar_love.jpg',
     details: ['Dije de corazón sutil', 'Largo clásico regulable', 'Perfecto para llevar siempre con vos'],
-    material: 'Acero Inoxidable',
-    dimensions: ''
+    dimensions: '42,5 cm'
   }
 ];
 
