@@ -19,7 +19,7 @@ export const PRODUCTS: Product[] = [
     name: 'Collar Halo',
     category: 'necklace',
     description: 'Collar plateado con dijes de estrellas, delicado y luminoso.',
-    pricePlaceholder: '$15.000',
+    pricePlaceholder: '$18.000',
     image: '/images/collar_halo.jpg',
     details: ['Largo regulable', 'Sutil y confortable', 'Diseño exclusivo con dijes colgantes'],
     dimensions: '38,5 cm'
@@ -29,7 +29,7 @@ export const PRODUCTS: Product[] = [
     name: 'Collar Calypso',
     category: 'necklace',
     description: 'Collar plateado con dije de sol, inspirado en una estética celestial.',
-    pricePlaceholder: '$12.000',
+    pricePlaceholder: '$16.000',
     image: '/images/collar_calypso.jpg',
     details: ['Dije de sol grabado', 'Estética minimalista', 'Largo intermedio ideal para layering'],
     dimensions: '43 cm'
@@ -39,7 +39,7 @@ export const PRODUCTS: Product[] = [
     name: 'Collar Electra',
     category: 'necklace',
     description: 'Collar largo plateado con dije de rayo, con una estética más intensa.',
-    pricePlaceholder: '$15.000',
+    pricePlaceholder: '$18.000',
     image: '/images/collar_electra.jpg',
     details: ['Cadena más larga', 'Dije de rayo moderno', 'Aporta un toque de actitud y brillo'],
     dimensions: '46 cm'
@@ -49,7 +49,7 @@ export const PRODUCTS: Product[] = [
     name: 'Pulsera Syra',
     category: 'bracelet',
     description: 'Pulsera plateada con dije central, simple y delicada.',
-    pricePlaceholder: '$8.500',
+    pricePlaceholder: '$10.000',
     image: '/images/pulsera_syra.jpg',
     details: ['Cadena ultrafina', 'Dije geométrico pulido', 'Cierre seguro y regulable'],
     dimensions: '19 cm'
@@ -59,7 +59,7 @@ export const PRODUCTS: Product[] = [
     name: 'Collar Volans',
     category: 'necklace',
     description: 'Collar plateado con dije de ala, liviano y simbólico.',
-    pricePlaceholder: '$12.000',
+    pricePlaceholder: '$16.000',
     image: '/images/collar_volans.jpg',
     details: ['Dije de ala calada', 'Brillo sutil', 'Ideal para usar todos los días'],
     dimensions: '44 cm'
@@ -69,7 +69,7 @@ export const PRODUCTS: Product[] = [
     name: 'Collar Lunna',
     category: 'necklace',
     description: 'Collar plateado con dije de media luna, un amuleto delicado para tu día a día.',
-    pricePlaceholder: '$15.000',
+    pricePlaceholder: '$18.000',
     image: '/images/collar_lunna.jpg',
     details: ['Dije de luna pulido', 'Estilo celestial y moderno', 'Ajustable a tu medida'],
     dimensions: '41 cm'
@@ -79,7 +79,7 @@ export const PRODUCTS: Product[] = [
     name: 'Pulsera Astra',
     category: 'bracelet',
     description: 'Pulsera plateada adornada con sutiles destellos de estrellas.',
-    pricePlaceholder: '$8.500',
+    pricePlaceholder: '$10.000',
     image: '/images/pulsera_astra.jpg',
     details: ['Estrellitas colgantes', 'Movimiento delicado', 'Ideal para combinar con el Collar Halo'],
     dimensions: '19 cm'
@@ -89,7 +89,7 @@ export const PRODUCTS: Product[] = [
     name: 'Collar Alaska',
     category: 'necklace',
     description: 'Collar plateado con dije facetado de diseño geométrico, elegante e imponente.',
-    pricePlaceholder: '$18.000',
+    pricePlaceholder: '$20.000',
     image: '/images/collar_alaska.jpg',
     details: ['Dije geométrico exclusivo', 'Cadena reforzada sutil', 'Gran brillo y textura'],
     dimensions: '47 cm'
@@ -99,7 +99,7 @@ export const PRODUCTS: Product[] = [
     name: 'Pulsera Nova',
     category: 'bracelet',
     description: 'Pulsera plateada con esferas sutiles que atrapan la luz con delicadeza.',
-    pricePlaceholder: '$8.500',
+    pricePlaceholder: '$10.000',
     image: '/images/pulsera_nova.jpg',
     details: ['Esferas minimalistas', 'Diseño moderno y ligero', 'Cierre de mosquetón seguro'],
     dimensions: '19 cm'
@@ -109,7 +109,7 @@ export const PRODUCTS: Product[] = [
     name: 'Collar Noctis',
     category: 'necklace',
     description: 'Collar plateado inspirado en el cielo nocturno, misterioso y elegante.',
-    pricePlaceholder: '$18.000',
+    pricePlaceholder: '$20.000',
     image: '/images/collar_noctis.jpg',
     details: ['Diseño inspirado en la noche', 'Terminación pulida espejo', 'Cadena de alta calidad'],
     dimensions: '67,5 cm'
@@ -119,7 +119,7 @@ export const PRODUCTS: Product[] = [
     name: 'Collar Love',
     category: 'necklace',
     description: 'Collar plateado con un delicado dije de corazón, un clásico con impronta minimalista.',
-    pricePlaceholder: '$15.000',
+    pricePlaceholder: '$16.000',
     image: '/images/collar_love.jpg',
     details: ['Dije de corazón sutil', 'Largo clásico regulable', 'Perfecto para llevar siempre con vos'],
     dimensions: '42,5 cm'
