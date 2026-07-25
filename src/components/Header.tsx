@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, MessageCircle } from 'lucide-react';
+import { Menu, X, MessageCircle, ShoppingBag } from 'lucide-react';
 import { BRAND_CONFIG } from '../data/products';
 import Logo from './Logo';
+import { useCart } from '../context/CartContext';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { totalItems, openCart } = useCart();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -92,8 +94,23 @@ export default function Header() {
             </button>
           </nav>
 
-          {/* WHATSAPP CTA */}
-          <div className="hidden md:flex items-center">
+          {/* DESKTOP CTAS & CART */}
+          <div className="hidden md:flex items-center gap-3">
+            <button
+              id="header-cart-btn"
+              onClick={openCart}
+              className="relative inline-flex items-center gap-2 bg-blanco-roto/90 hover:bg-blanco-roto text-taupe-dark px-4 py-2 rounded-full text-xs font-medium tracking-wider uppercase border border-gris-perla/30 transition-all duration-300 hover:shadow-sm cursor-pointer"
+              aria-label="Ver carrito"
+            >
+              <ShoppingBag size={15} />
+              <span className="hidden lg:inline">Carrito</span>
+              {totalItems > 0 && (
+                <span className="bg-taupe text-blanco-roto text-[10px] font-semibold px-1.5 py-0.5 rounded-full font-sans">
+                  {totalItems}
+                </span>
+              )}
+            </button>
+
             <a
               id="header-wa-cta"
               href={whatsappUrl}
@@ -106,8 +123,22 @@ export default function Header() {
             </a>
           </div>
 
-          {/* MOBILE MENU TOGGLE */}
-          <div className="md:hidden flex items-center">
+          {/* MOBILE CONTROLS */}
+          <div className="md:hidden flex items-center gap-1">
+            <button
+              id="mobile-cart-btn"
+              onClick={openCart}
+              className="relative text-dark-soft hover:text-taupe-dark p-2 transition-colors cursor-pointer"
+              aria-label="Ver carrito"
+            >
+              <ShoppingBag size={22} />
+              {totalItems > 0 && (
+                <span className="absolute top-0 right-0 bg-taupe text-blanco-roto text-[9px] font-semibold w-4 h-4 rounded-full flex items-center justify-center font-sans border border-crema">
+                  {totalItems}
+                </span>
+              )}
+            </button>
+
             <button
               id="mobile-menu-toggle"
               onClick={() => setIsOpen(!isOpen)}

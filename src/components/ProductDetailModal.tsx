@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, MessageCircle, Instagram, Ruler, ChevronRight } from 'lucide-react';
+import { X, MessageCircle, Instagram, Ruler, ChevronRight, ShoppingBag, Plus, Minus, Check } from 'lucide-react';
 import { Product } from '../types';
 import { BRAND_CONFIG } from '../data/products';
+import { useCart } from '../context/CartContext';
 
 interface ProductDetailModalProps {
   product: Product;
@@ -11,9 +12,19 @@ interface ProductDetailModalProps {
 
 export default function ProductDetailModal({ product, onClose }: ProductDetailModalProps) {
   const [copied, setCopied] = useState(false);
+  const [quantity, setQuantity] = useState(1);
+  const [added, setAdded] = useState(false);
+  const { addToCart, openCart } = useCart();
+
   const queryMessage = BRAND_CONFIG.productInquiryMessage(product.name);
   const whatsappUrl = `https://wa.me/${BRAND_CONFIG.whatsappNumber}?text=${encodeURIComponent(queryMessage)}`;
   const instagramDirectUrl = `https://ig.me/m/${BRAND_CONFIG.instagram}`;
+
+  const handleAddToCart = () => {
+    addToCart(product, quantity);
+    setAdded(true);
+    setTimeout(() => setAdded(false), 2500);
+  };
 
   const handleInstagramClick = async () => {
     try {
@@ -133,11 +144,63 @@ export default function ProductDetailModal({ product, onClose }: ProductDetailMo
             )}
           </div>
 
-          {/* ACTION BUTTONS */}
-          <div className="space-y-3 pt-4 border-t border-gris-perla/10">
-            <span className="block text-center text-[10px] tracking-wider text-dark-soft/55 uppercase font-sans mb-1">
-              ¿Te encanta? Consultanos sin compromiso:
-            </span>
+          {/* ACTION BUTTONS & CART CONTROLS */}
+          <div className="space-y-3 pt-4 border-t border-gris-perla/20">
+            {/* ADD TO CART SECTION */}
+            <div className="flex items-center gap-3">
+              {/* QUANTITY SELECTOR */}
+              <div className="flex items-center bg-blanco-roto border border-gris-perla/30 rounded-full px-3 py-2">
+                <button
+                  onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}
+                  className="p-1 hover:bg-crema rounded-full text-dark-soft/70 hover:text-taupe-dark transition-colors"
+                  aria-label="Disminuir cantidad"
+                >
+                  <Minus size={14} />
+                </button>
+                <span className="px-3 text-xs font-sans font-semibold text-dark-soft min-w-[20px] text-center">
+                  {quantity}
+                </span>
+                <button
+                  onClick={() => setQuantity((prev) => prev + 1)}
+                  className="p-1 hover:bg-crema rounded-full text-dark-soft/70 hover:text-taupe-dark transition-colors"
+                  aria-label="Aumentar cantidad"
+                >
+                  <Plus size={14} />
+                </button>
+              </div>
+
+              {/* ADD TO CART BUTTON */}
+              <button
+                onClick={handleAddToCart}
+                className="flex-1 inline-flex items-center justify-center gap-2 bg-taupe hover:bg-taupe-dark text-blanco-roto px-6 py-3.5 rounded-full text-xs font-semibold tracking-widest uppercase transition-all duration-300 shadow-md shadow-taupe/10 cursor-pointer"
+              >
+                {added ? <Check size={16} /> : <ShoppingBag size={16} />}
+                <span>{added ? '¡Agregado!' : 'Agregar al Carrito'}</span>
+              </button>
+            </div>
+
+            {/* ADDED TO CART NOTIFICATION */}
+            <AnimatePresence>
+              {added && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0, y: 5 }}
+                  animate={{ opacity: 1, height: 'auto', y: 0 }}
+                  exit={{ opacity: 0, height: 0, y: 5 }}
+                  className="bg-emerald-50 border border-emerald-200 text-emerald-800 text-center py-2.5 px-3 rounded-2xl text-[11px] font-medium leading-normal tracking-wide overflow-hidden flex items-center justify-between"
+                >
+                  <span>✨ Producto agregado al carrito</span>
+                  <button
+                    onClick={() => {
+                      onClose();
+                      openCart();
+                    }}
+                    className="underline text-emerald-900 font-bold hover:text-black cursor-pointer ml-2"
+                  >
+                    Ver Carrito
+                  </button>
+                </motion.div>
+              )}
+            </AnimatePresence>
 
             {/* COPIED TOAST FOR INSTAGRAM */}
             <AnimatePresence>
@@ -153,28 +216,34 @@ export default function ProductDetailModal({ product, onClose }: ProductDetailMo
               )}
             </AnimatePresence>
 
-            {/* WHATSAPP CTA */}
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="w-full inline-flex items-center justify-center gap-2.5 bg-taupe hover:bg-taupe-dark text-blanco-roto px-6 py-3.5 rounded-full text-xs font-semibold tracking-widest uppercase transition-all duration-300 shadow-md shadow-taupe/10 cursor-pointer"
-            >
-              <MessageCircle size={16} />
-              Consultar por WhatsApp
-            </a>
+            <span className="block text-center text-[10px] tracking-wider text-dark-soft/55 uppercase font-sans pt-1">
+              ¿Preferís consultar directo?
+            </span>
 
-            {/* INSTAGRAM CTA */}
-            <a
-              href={instagramDirectUrl}
-              target="_blank"
-              rel="noreferrer"
-              onClick={handleInstagramClick}
-              className="w-full inline-flex items-center justify-center gap-2.5 bg-blanco-roto hover:bg-taupe/5 text-taupe-dark border border-taupe/30 px-6 py-3.5 rounded-full text-xs font-semibold tracking-widest uppercase transition-all duration-300 cursor-pointer"
-            >
-              <Instagram size={16} />
-              Consultar por Instagram
-            </a>
+            <div className="grid grid-cols-2 gap-2">
+              {/* WHATSAPP CTA */}
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-1.5 bg-blanco-roto hover:bg-taupe/5 text-taupe-dark border border-taupe/30 px-3 py-2.5 rounded-full text-[11px] font-semibold tracking-wider uppercase transition-all duration-300 cursor-pointer truncate"
+              >
+                <MessageCircle size={14} />
+                WhatsApp
+              </a>
+
+              {/* INSTAGRAM CTA */}
+              <a
+                href={instagramDirectUrl}
+                target="_blank"
+                rel="noreferrer"
+                onClick={handleInstagramClick}
+                className="inline-flex items-center justify-center gap-1.5 bg-blanco-roto hover:bg-taupe/5 text-taupe-dark border border-taupe/30 px-3 py-2.5 rounded-full text-[11px] font-semibold tracking-wider uppercase transition-all duration-300 cursor-pointer truncate"
+              >
+                <Instagram size={14} />
+                Instagram
+              </a>
+            </div>
           </div>
         </div>
       </motion.div>

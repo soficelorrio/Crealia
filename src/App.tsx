@@ -5,33 +5,40 @@ import About from './components/About';
 import CareSection from './components/CareSection';
 import HowToBuy from './components/HowToBuy';
 import Footer from './components/Footer';
+import CartDrawer from './components/CartDrawer';
+import { CartProvider } from './context/CartContext';
 
 export default function App() {
   return (
-    <div id="app-root" className="min-h-screen bg-crema text-dark-soft overflow-x-hidden selection:bg-taupe/10 selection:text-taupe-dark">
-      {/* HEADER */}
-      <Header />
+    <CartProvider>
+      <div id="app-root" className="min-h-screen bg-crema text-dark-soft overflow-x-hidden selection:bg-taupe/10 selection:text-taupe-dark">
+        {/* HEADER */}
+        <Header />
 
-      {/* CORE LAYOUT */}
-      <main id="main-content">
-        {/* HERO */}
-        <Hero />
+        {/* CORE LAYOUT */}
+        <main id="main-content">
+          {/* HERO */}
+          <Hero />
 
-        {/* CATALOG / PRODUCTS GRID */}
-        <ProductGrid />
+          {/* CATALOG / PRODUCTS GRID */}
+          <ProductGrid />
 
-        {/* ABOUT US */}
-        <About />
+          {/* ABOUT US */}
+          <About />
 
-        {/* JEWELRY CARE */}
-        <CareSection />
+          {/* JEWELRY CARE */}
+          <CareSection />
 
-        {/* GUIDED STEPS ON HOW TO BUY */}
-        <HowToBuy />
-      </main>
+          {/* GUIDED STEPS ON HOW TO BUY */}
+          <HowToBuy />
+        </main>
 
-      {/* FOOTER */}
-      <Footer />
-    </div>
+        {/* FOOTER */}
+        <Footer />
+
+        {/* SHOPPING CART DRAWER */}
+        <CartDrawer />
+      </div>
+    </CartProvider>
   );
 }

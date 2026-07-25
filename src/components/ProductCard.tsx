@@ -1,8 +1,9 @@
 import { motion } from 'motion/react';
-import { MessageCircle, Info } from 'lucide-react';
+import { MessageCircle, Info, ShoppingBag, Check } from 'lucide-react';
 import { Product } from '../types';
 import { BRAND_CONFIG } from '../data/products';
-import { useState } from 'react';
+import { useState, MouseEvent } from 'react';
+import { useCart } from '../context/CartContext';
 
 interface ProductCardProps {
   product: Product;
@@ -12,9 +13,18 @@ interface ProductCardProps {
 
 export default function ProductCard({ product, onSelect }: ProductCardProps) {
   const [showDetails, setShowDetails] = useState(false);
+  const [added, setAdded] = useState(false);
+  const { addToCart } = useCart();
 
   const queryMessage = BRAND_CONFIG.productInquiryMessage(product.name);
   const whatsappUrl = `https://wa.me/${BRAND_CONFIG.whatsappNumber}?text=${encodeURIComponent(queryMessage)}`;
+
+  const handleAddToCart = (e: MouseEvent) => {
+    e.stopPropagation();
+    addToCart(product, 1);
+    setAdded(true);
+    setTimeout(() => setAdded(false), 1500);
+  };
 
   return (
     <motion.div
@@ -91,16 +101,31 @@ export default function ProductCard({ product, onSelect }: ProductCardProps) {
             </span>
           </div>
 
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noreferrer"
-            onClick={(e) => e.stopPropagation()}
-            className="inline-flex items-center gap-1.5 bg-taupe hover:bg-taupe-dark text-blanco-roto px-4 py-2.5 rounded-full text-xs font-medium tracking-wider uppercase transition-colors duration-300"
-          >
-            <MessageCircle size={14} />
-            Consultar
-          </a>
+          <div className="flex items-center gap-1.5">
+            <button
+              onClick={handleAddToCart}
+              className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-medium tracking-wider uppercase transition-all duration-300 cursor-pointer ${
+                added
+                  ? 'bg-emerald-700 text-white'
+                  : 'bg-taupe hover:bg-taupe-dark text-blanco-roto shadow-sm'
+              }`}
+              title="Agregar al carrito"
+            >
+              {added ? <Check size={14} /> : <ShoppingBag size={14} />}
+              <span>{added ? 'Agregado' : 'Agregar'}</span>
+            </button>
+
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="p-2 bg-blanco-roto hover:bg-taupe/10 text-taupe-dark border border-taupe/20 rounded-full transition-colors duration-300"
+              title="Consultar por WhatsApp"
+            >
+              <MessageCircle size={15} />
+            </a>
+          </div>
         </div>
       </div>
     </motion.div>
