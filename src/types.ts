@@ -21,3 +21,13 @@ export interface PurchaseStep {
   title: string;
   description: string;
 }
+
+export interface Review {
+  id: string;
+  name: string;
+  product?: string;
+  rating: number;
+  comment: string;
+  date: string;
+  status: 'approved' | 'pending';
+}

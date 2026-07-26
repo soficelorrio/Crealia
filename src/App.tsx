@@ -3,6 +3,7 @@ import Hero from './components/Hero';
 import ProductGrid from './components/ProductGrid';
 import About from './components/About';
 import CareSection from './components/CareSection';
+import ReviewsSection from './components/ReviewsSection';
 import HowToBuy from './components/HowToBuy';
 import Footer from './components/Footer';
 import CartDrawer from './components/CartDrawer';
@@ -28,6 +29,9 @@ export default function App() {
 
           {/* JEWELRY CARE */}
           <CareSection />
+
+          {/* CUSTOMER REVIEWS */}
+          <ReviewsSection />
 
           {/* GUIDED STEPS ON HOW TO BUY */}
           <HowToBuy />

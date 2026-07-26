@@ -87,6 +87,12 @@ export default function Header() {
               Cuidados
             </button>
             <button
+              onClick={() => scrollToSection('resenas')}
+              className="text-sm tracking-wider font-sans text-dark-soft/80 hover:text-taupe-dark transition-colors duration-300 font-medium"
+            >
+              Reseñas
+            </button>
+            <button
               onClick={() => scrollToSection('como-comprar')}
               className="text-sm tracking-wider font-sans text-dark-soft/80 hover:text-taupe-dark transition-colors duration-300 font-medium"
             >
@@ -181,6 +187,12 @@ export default function Header() {
               className="text-base tracking-wider font-sans text-dark-soft py-2 w-full text-center hover:bg-blanco-roto rounded transition-colors"
             >
               Cuidados
+            </button>
+            <button
+              onClick={() => scrollToSection('resenas')}
+              className="text-base tracking-wider font-sans text-dark-soft py-2 w-full text-center hover:bg-blanco-roto rounded transition-colors"
+            >
+              Reseñas
             </button>
             <button
               onClick={() => scrollToSection('como-comprar')}
