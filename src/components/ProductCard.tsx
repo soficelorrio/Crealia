@@ -46,6 +46,7 @@ export default function ProductCard({ product, onSelect }: ProductCardProps) {
         {/* CATEGORY TAG */}
         <span className="absolute top-4 left-4 bg-crema/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-[10px] font-medium tracking-wider uppercase text-taupe-dark border border-blanco-roto/50">
           {product.category === 'necklace' ? 'Collar' : 'Pulsera'}
+          {product.forMen && <span className="text-taupe font-semibold ml-1">· Hombre</span>}
         </span>
 
         {/* DETAILS BUTTON OVERLAY */}

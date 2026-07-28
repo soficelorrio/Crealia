@@ -21,8 +21,11 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (id: string) => {
+  const scrollToSection = (id: string, tab?: string) => {
     setIsOpen(false);
+    if (tab) {
+      window.dispatchEvent(new CustomEvent('set-category-tab', { detail: tab }));
+    }
     const element = document.getElementById(id);
     if (element) {
       const headerOffset = 80;
@@ -69,10 +72,16 @@ export default function Header() {
               Inicio
             </button>
             <button
-              onClick={() => scrollToSection('coleccion')}
+              onClick={() => scrollToSection('coleccion', 'all')}
               className="text-sm tracking-wider font-sans text-dark-soft/80 hover:text-taupe-dark transition-colors duration-300 font-medium"
             >
               Colección
+            </button>
+            <button
+              onClick={() => scrollToSection('coleccion', 'men')}
+              className="text-sm tracking-wider font-sans text-dark-soft/80 hover:text-taupe-dark transition-colors duration-300 font-medium"
+            >
+              Hombres
             </button>
             <button
               onClick={() => scrollToSection('sobre-crealia')}
@@ -171,10 +180,16 @@ export default function Header() {
               Inicio
             </button>
             <button
-              onClick={() => scrollToSection('coleccion')}
+              onClick={() => scrollToSection('coleccion', 'all')}
               className="text-base tracking-wider font-sans text-dark-soft py-2 w-full text-center hover:bg-blanco-roto rounded transition-colors"
             >
               Colección
+            </button>
+            <button
+              onClick={() => scrollToSection('coleccion', 'men')}
+              className="text-base tracking-wider font-sans text-dark-soft py-2 w-full text-center hover:bg-blanco-roto rounded transition-colors"
+            >
+              Hombres
             </button>
             <button
               onClick={() => scrollToSection('sobre-crealia')}

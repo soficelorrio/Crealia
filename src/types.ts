@@ -2,6 +2,7 @@ export interface Product {
   id: string;
   name: string;
   category: 'necklace' | 'bracelet';
+  forMen?: boolean;
   description: string;
   pricePlaceholder: string;
   image: string;

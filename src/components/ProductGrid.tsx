@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Sparkles } from 'lucide-react';
 import ProductCard from './ProductCard';
@@ -7,11 +7,22 @@ import { PRODUCTS } from '../data/products';
 import { Product } from '../types';
 
 export default function ProductGrid() {
-  const [activeTab, setActiveTab] = useState<'all' | 'necklace' | 'bracelet'>('all');
+  const [activeTab, setActiveTab] = useState<'all' | 'necklace' | 'bracelet' | 'men'>('all');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+
+  useEffect(() => {
+    const handleSetTab = (e: CustomEvent<string>) => {
+      if (e.detail === 'men' || e.detail === 'necklace' || e.detail === 'bracelet' || e.detail === 'all') {
+        setActiveTab(e.detail as any);
+      }
+    };
+    window.addEventListener('set-category-tab', handleSetTab as EventListener);
+    return () => window.removeEventListener('set-category-tab', handleSetTab as EventListener);
+  }, []);
 
   const filteredProducts = PRODUCTS.filter((product) => {
     if (activeTab === 'all') return true;
+    if (activeTab === 'men') return product.forMen === true;
     return product.category === activeTab;
   });
 
@@ -80,6 +91,21 @@ export default function ProductGrid() {
                 />
               )}
               Pulseras
+            </button>
+            <button
+              onClick={() => setActiveTab('men')}
+              className={`relative px-5 py-2 rounded-full text-xs font-medium tracking-wider uppercase transition-colors duration-300 cursor-pointer ${
+                activeTab === 'men' ? 'text-blanco-roto' : 'text-dark-soft/75 hover:text-taupe'
+              }`}
+            >
+              {activeTab === 'men' && (
+                <motion.div
+                  layoutId="active-pill"
+                  className="absolute inset-0 bg-taupe rounded-full -z-10"
+                  transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                />
+              )}
+              Hombres
             </button>
           </div>
         </div>
