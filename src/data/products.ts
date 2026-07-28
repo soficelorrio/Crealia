@@ -123,6 +123,76 @@ export const PRODUCTS: Product[] = [
     image: '/images/collar_love.jpg',
     details: ['Dije de corazón sutil', 'Largo clásico regulable', 'Perfecto para llevar siempre con vos'],
     dimensions: '42,5 cm'
+  },
+  {
+    id: 'pulsera-travel',
+    name: 'Pulsera Travel',
+    category: 'bracelet',
+    description: 'Pulsera delicada y ligera, con un diseño ideal para acompañarte a todos lados.',
+    pricePlaceholder: '$10.000',
+    image: '/images/pulsera_travel.jpg',
+    details: ['Cierre seguro y regulable', 'Diseño sutil y versátil', 'Ideal para layering'],
+    dimensions: '18 cm'
+  },
+  {
+    id: 'pulsera-stars',
+    name: 'Pulsera Stars',
+    category: 'bracelet',
+    description: 'Pulsera dorada adornada con delicados destellos de estrellas.',
+    pricePlaceholder: '$10.000',
+    image: '/images/pulsera_stars.jpg',
+    details: ['Detalles de estrellas brillantes', 'Tono dorado cálido', 'Combinación perfecta para cualquier look'],
+    dimensions: '18 cm'
+  },
+  {
+    id: 'collar-volt',
+    name: 'Collar Volt',
+    category: 'necklace',
+    description: 'Collar con un toque de actitud y brillo distintivo, moderno e imponente.',
+    pricePlaceholder: '$16.000',
+    image: '/images/collar_volt.jpg',
+    details: ['Diseño contemporáneo', 'Aporta luz y textura', 'Ideal para usar solo o en capas'],
+    dimensions: '42 cm'
+  },
+  {
+    id: 'collar-cruzia',
+    name: 'Collar Cruzia',
+    category: 'necklace',
+    description: 'Collar largo con dije de cruz estilizada, atemporal y elegante.',
+    pricePlaceholder: '$18.000',
+    image: '/images/collar_cruiza.jpg',
+    details: ['Largo especial de presencia', 'Terminación pulida brillante', 'Diseño sobrio y distinguido'],
+    dimensions: '62 cm'
+  },
+  {
+    id: 'pulsera-roma',
+    name: 'Pulsera Roma',
+    category: 'bracelet',
+    description: 'Pulsera de eslabón fino y diseño equilibrado, sobria y cómoda.',
+    pricePlaceholder: '$10.000',
+    image: '/images/pulsera_roma.jpg',
+    details: ['Eslabón fino pulido', 'Confortable para el uso diario', 'Cierre seguro'],
+    dimensions: '20 cm'
+  },
+  {
+    id: 'pulsera-atlas',
+    name: 'Pulsera Atlas',
+    category: 'bracelet',
+    description: 'Pulsera de eslabones con mayor presencia y estructura moderna.',
+    pricePlaceholder: '$10.000',
+    image: '/images/pulsera_atlas.jpg',
+    details: ['Eslabón con carácter', 'Diseño firme y elegante', 'Aporta un estilo único'],
+    dimensions: '19 cm'
+  },
+  {
+    id: 'pulsera-marea',
+    name: 'Pulsera Marea',
+    category: 'bracelet',
+    description: 'Pulsera dorada destacada por su clásico y elegante cierre marinero.',
+    pricePlaceholder: '$10.000',
+    image: '/images/pulsera_marea.jpg',
+    details: ['Cierre marinero distintivo', 'Tono dorado atemporal', 'Diseño fino y versátil'],
+    dimensions: '18 cm'
   }
 ];
 
