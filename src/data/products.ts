@@ -196,6 +196,16 @@ export const PRODUCTS: Product[] = [
     image: '/images/pulsera_marea.jpg',
     details: ['Cierre marinero distintivo', 'Tono dorado atemporal', 'Diseño fino y versátil'],
     dimensions: '18 cm'
+  },
+  {
+    id: 'collar-heart',
+    name: 'Collar Heart',
+    category: 'necklace',
+    description: 'Collar delicado con dije de corazón, un clásico atemporal y romántico.',
+    pricePlaceholder: '$16.000',
+    image: '/images/collar_heart.jpg',
+    details: ['Dije de corazón romántico', 'Terminación pulida de alto brillo', 'Diseño delicado e ideal para regalar'],
+    dimensions: '38 cm'
   }
 ];
 
