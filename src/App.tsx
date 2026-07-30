@@ -1,5 +1,6 @@
 import Header from './components/Header';
 import Hero from './components/Hero';
+import FeaturedNecklaces from './components/FeaturedNecklaces';
 import ProductGrid from './components/ProductGrid';
 import About from './components/About';
 import CareSection from './components/CareSection';
@@ -20,6 +21,9 @@ export default function App() {
         <main id="main-content">
           {/* HERO */}
           <Hero />
+
+          {/* FEATURED / MOST REQUESTED NECKLACES */}
+          <FeaturedNecklaces />
 
           {/* CATALOG / PRODUCTS GRID */}
           <ProductGrid />
