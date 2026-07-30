@@ -140,7 +140,7 @@ export const PRODUCTS: Product[] = [
     category: 'bracelet',
     description: 'Pulsera dorada adornada con delicados destellos de estrellas.',
     pricePlaceholder: '$10.000',
-    image: '/images/pulsera_stars.jpg',
+    image: '/images/pulsera_stars_web.jpg',
     details: ['Detalles de estrellas brillantes', 'Tono dorado cálido', 'Combinación perfecta para cualquier look'],
     dimensions: '18 cm'
   },
@@ -193,7 +193,7 @@ export const PRODUCTS: Product[] = [
     category: 'bracelet',
     description: 'Pulsera dorada destacada por su clásico y elegante cierre marinero.',
     pricePlaceholder: '$10.000',
-    image: '/images/pulsera_marea.jpg',
+    image: '/images/pulsera_marea_web.jpg',
     details: ['Cierre marinero distintivo', 'Tono dorado atemporal', 'Diseño fino y versátil'],
     dimensions: '18 cm'
   },
