@@ -196,7 +196,7 @@ export default function CartDrawer() {
                   {/* TOTAL ESTIMATION */}
                   <div className="flex items-center justify-between font-sans">
                     <span className="text-xs uppercase tracking-widest text-dark-soft/60">
-                      Total estimado:
+                      Total:
                     </span>
                     <span className="font-serif text-2xl font-medium text-taupe-dark">
                       {formattedTotal}
