@@ -8,10 +8,19 @@ export default function CartDrawer() {
 
   const generateWhatsAppMessage = () => {
     const itemsList = cart
-      .map((item) => `• ${item.product.name} × ${item.quantity}`)
+      .map((item) => {
+        const unitPriceNum = parseInt(item.product.pricePlaceholder.replace(/[^0-9]/g, ''), 10) || 0;
+        if (item.quantity > 1) {
+          const itemSubtotal = '$' + (unitPriceNum * item.quantity).toLocaleString('es-AR');
+          return `• ${item.product.name} × ${item.quantity} (${itemSubtotal})`;
+        }
+        return `• ${item.product.name} (${item.product.pricePlaceholder})`;
+      })
       .join('\n');
 
-    return `Hola, quiero consultar por los siguientes productos:\n\n${itemsList}\n\nMuchas gracias.`;
+    const formattedTotal = '$' + totalPrice.toLocaleString('es-AR');
+
+    return `Hola! Quisiera realizar el pedido de los siguientes productos:\n\n${itemsList}\n\n*Total:* ${formattedTotal}\n\nMuchas gracias!`;
   };
 
   const handleFinishOrder = () => {
