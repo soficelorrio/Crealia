@@ -25,16 +25,6 @@ export const PRODUCTS: Product[] = [
     dimensions: '38 cm'
   },
   {
-    id: 'pulsera-marea',
-    name: 'Pulsera Marea',
-    category: 'bracelet',
-    description: 'Pulsera dorada destacada por su clásico y elegante cierre marinero.',
-    pricePlaceholder: '$10.000',
-    image: '/images/pulsera_marea_web.jpg',
-    details: ['Cierre marinero distintivo', 'Tono dorado atemporal', 'Diseño fino y versátil'],
-    dimensions: '18 cm'
-  },
-  {
     id: 'pulsera-atlas',
     name: 'Pulsera Atlas',
     category: 'bracelet',
