@@ -71,7 +71,7 @@ export default function ProductDetailModal({ product, onClose }: ProductDetailMo
               src={product.image}
               alt={product.name}
               referrerPolicy="no-referrer"
-              className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700 ease-out"
+              className={`w-full h-full object-cover ${product.imagePosition || 'object-center'} transform hover:scale-105 transition-transform duration-700 ease-out`}
             />
             
             {/* FLOATING CATEGORY TAG */}

@@ -6,12 +6,12 @@ import { Product } from '../types';
 import { useCart } from '../context/CartContext';
 import ProductDetailModal from './ProductDetailModal';
 
-// List of top requested necklaces
+// List of top requested items
 const FEATURED_NECKLACE_IDS = [
-  { id: 'collar-electra', tag: '1º Más Pedido', badgeColor: 'bg-amber-100 text-amber-900 border-amber-300' },
-  { id: 'collar-love', tag: 'Favorito del Mes', badgeColor: 'bg-rose-100 text-rose-900 border-rose-300' },
-  { id: 'collar-halo', tag: 'Top Trending', badgeColor: 'bg-purple-100 text-purple-900 border-purple-300' },
-  { id: 'collar-volt', tag: 'Clásico Infaltable', badgeColor: 'bg-stone-200 text-stone-900 border-stone-300' },
+  { id: 'collar-nara', tag: '1º Más Pedido', badgeColor: 'bg-amber-100 text-amber-900 border-amber-300' },
+  { id: 'collar-alaska', tag: 'Favorito del Mes', badgeColor: 'bg-rose-100 text-rose-900 border-rose-300' },
+  { id: 'collar-halo', tag: 'El Infaltable', badgeColor: 'bg-stone-200 text-stone-900 border-stone-300' },
+  { id: 'pulsera-travel', tag: 'Top Trending', badgeColor: 'bg-purple-100 text-purple-900 border-purple-300' },
 ];
 
 export default function FeaturedNecklaces() {
@@ -48,7 +48,7 @@ export default function FeaturedNecklaces() {
             Los Favoritos de la Comunidad
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl text-taupe-dark font-light tracking-wide mb-3">
-            Collares Más Pedidos
+            Los Más Pedidos
           </h2>
           <p className="font-sans text-sm text-dark-soft/75 max-w-xl mx-auto leading-relaxed">
             Descubrí los modelos más consultados y elegidos por nuestras clientas. Diseños versátiles que transforman cualquier look.
@@ -76,7 +76,7 @@ export default function FeaturedNecklaces() {
                     src={product.image}
                     alt={product.name}
                     referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover object-center transform group-hover:scale-108 transition-transform duration-700 ease-out"
+                    className={`w-full h-full object-cover ${product.imagePosition || 'object-center'} transform group-hover:scale-108 transition-transform duration-700 ease-out`}
                   />
 
                   {/* BEST SELLER BADGE */}

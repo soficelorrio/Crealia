@@ -8,6 +8,7 @@ export interface Product {
   image: string;
   details?: string[];
   dimensions?: string;
+  imagePosition?: string;
 }
 
 export interface CareItem {

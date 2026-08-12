@@ -15,6 +15,39 @@ export const BRAND_CONFIG = {
 
 export const PRODUCTS: Product[] = [
   {
+    id: 'collar-nara',
+    name: 'Collar Nara',
+    category: 'necklace',
+    description: 'Collar delicado con un toque moderno y elegante, perfecto para destacar en cualquier ocasión.',
+    pricePlaceholder: '$18.000',
+    image: '/images/collar_nara.jpg',
+    imagePosition: 'object-[center_90%]',
+    details: ['Diseño exclusivo y fino', 'Brillo sutil e inalterable', 'Combinación ideal para el uso diario'],
+    dimensions: '40 cm + 5 cm de extensor'
+  },
+  {
+    id: 'collar-alma-dorado',
+    name: 'Collar Alma Dorado',
+    category: 'necklace',
+    description: 'Collar dorado delicado con un brillo cálido y sofisticado.',
+    pricePlaceholder: '$18.000',
+    image: '/images/collara_alma_dorado.jpg',
+    imagePosition: 'object-bottom',
+    details: ['Tono dorado brillante y cálido', 'Diseño fino y delicado', 'Ideal para llevar solo o en capas'],
+    dimensions: '42 cm'
+  },
+  {
+    id: 'collar-alma-plateado',
+    name: 'Collar Alma Plateado',
+    category: 'necklace',
+    description: 'Collar plateado delicado con diseño minimalista, luminoso y atemporal.',
+    pricePlaceholder: '$18.000',
+    image: '/images/collar_alma_plateado.jpg',
+    imagePosition: 'object-bottom',
+    details: ['Acabado plateado brillante', 'Estilo minimalista e intemporal', 'Largo versátil para todo tipo de escote'],
+    dimensions: '42 cm'
+  },
+  {
     id: 'collar-heart',
     name: 'Collar Heart',
     category: 'necklace',
