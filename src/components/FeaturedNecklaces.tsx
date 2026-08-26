@@ -9,9 +9,9 @@ import ProductDetailModal from './ProductDetailModal';
 // List of top requested items
 const FEATURED_NECKLACE_IDS = [
   { id: 'collar-nara', tag: '1º Más Pedido', badgeColor: 'bg-amber-100 text-amber-900 border-amber-300' },
-  { id: 'collar-alaska', tag: 'Favorito del Mes', badgeColor: 'bg-rose-100 text-rose-900 border-rose-300' },
-  { id: 'collar-halo', tag: 'El Infaltable', badgeColor: 'bg-stone-200 text-stone-900 border-stone-300' },
-  { id: 'pulsera-travel', tag: 'Top Trending', badgeColor: 'bg-purple-100 text-purple-900 border-purple-300' },
+  { id: 'collar-volans', tag: 'Favorito del Mes', badgeColor: 'bg-rose-100 text-rose-900 border-rose-300' },
+  { id: 'collar-alaska', tag: 'El Infaltable', badgeColor: 'bg-stone-200 text-stone-900 border-stone-300' },
+  { id: 'collar-alma-dorado', tag: 'Top Trending', badgeColor: 'bg-purple-100 text-purple-900 border-purple-300' },
 ];
 
 export default function FeaturedNecklaces() {
