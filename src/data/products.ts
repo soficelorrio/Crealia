@@ -15,6 +15,50 @@ export const BRAND_CONFIG = {
 
 export const PRODUCTS: Product[] = [
   {
+    id: 'choker-cosmo',
+    name: 'Choker Cosmo',
+    category: 'necklace',
+    description: 'Gargantilla tipo choker delicada y moderna, con un brillo sutil que enmarca el cuello con distinción.',
+    pricePlaceholder: '$15.000',
+    image: '/images/choker_cosmo.jpg',
+    imagePosition: 'object-bottom',
+    details: ['Acero inoxidable', 'Diseño estilo choker', 'Largo al cuello con extensor regulable', 'Brillo inalterable y cómodo para uso diario'],
+    dimensions: '35 cm + 5 cm de extensor'
+  },
+  {
+    id: 'choker-desire',
+    name: 'Choker Desire',
+    category: 'necklace',
+    description: 'Choker sofisticado y femenino, diseñado para aportar un toque de elegancia y presencia a cualquier escote.',
+    pricePlaceholder: '$15.000',
+    image: '/images/choker_desire.jpg',
+    imagePosition: 'object-bottom',
+    details: ['Acero inoxidable', 'Diseño delicado al cuello', 'Terminación pulida brillante', 'Ideal para usar solo o en capas'],
+    dimensions: '35 cm + 5 cm de extensor'
+  },
+  {
+    id: 'choker-sunshine',
+    name: 'Choker Sunshine',
+    category: 'necklace',
+    description: 'Choker radiante con detalles luminosos que capturan la luz con calidez y energía.',
+    pricePlaceholder: '$15.000',
+    image: '/images/choker_sunshine.jpg',
+    imagePosition: 'object-bottom',
+    details: ['Acero inoxidable', 'Tono dorado cálido y luminoso', 'Diseño sutil y versátil', 'Cierre seguro con extensor'],
+    dimensions: '35 cm + 5 cm de extensor'
+  },
+  {
+    id: 'choker-sunshine-silver',
+    name: 'Choker Sunshine Silver',
+    category: 'necklace',
+    description: 'Choker plateado minimalista y luminoso, inspirado en los destellos del sol con acabado brillante.',
+    pricePlaceholder: '$15.000',
+    image: '/images/choker_sunshine_silver.jpg',
+    imagePosition: 'object-bottom',
+    details: ['Acero inoxidable', 'Acabado plateado brillante', 'Estilo minimalista atemporal', 'Ajuste cómodo con extensor'],
+    dimensions: '35 cm + 5 cm de extensor'
+  },
+  {
     id: 'collar-flash',
     name: 'Collar Flash',
     category: 'necklace',
@@ -219,7 +263,7 @@ export const PRODUCTS: Product[] = [
     name: 'Collar Lunna',
     category: 'necklace',
     description: 'Collar plateado con dije de media luna, un amuleto delicado para tu día a día.',
-    pricePlaceholder: '$18.000',
+    pricePlaceholder: '$20.000',
     image: '/images/collar_lunna.jpg',
     details: ['Dije de luna pulido', 'Estilo celestial y moderno', 'Ajustable a tu medida'],
     dimensions: '41 cm'

@@ -71,12 +71,12 @@ export default function FeaturedNecklaces() {
                 className="group relative flex flex-col bg-crema/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-taupe/15 shadow-sm hover:shadow-xl hover:shadow-taupe/10 transition-all duration-300 cursor-pointer"
               >
                 {/* IMAGE & BADGE */}
-                <div className="relative aspect-square overflow-hidden bg-blanco-roto">
+                <div className="relative aspect-square overflow-hidden bg-[#FAF8F5] flex items-center justify-center p-3">
                   <img
                     src={product.image}
                     alt={product.name}
                     referrerPolicy="no-referrer"
-                    className={`w-full h-full object-cover ${product.imagePosition || 'object-center'} transform group-hover:scale-108 transition-transform duration-700 ease-out`}
+                    className="w-full h-full object-contain transform group-hover:scale-108 transition-transform duration-500 ease-out"
                   />
 
                   {/* BEST SELLER BADGE */}

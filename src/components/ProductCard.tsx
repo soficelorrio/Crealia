@@ -36,12 +36,12 @@ export default function ProductCard({ product, onSelect }: ProductCardProps) {
       className="group relative flex flex-col bg-blanco-roto rounded-2xl overflow-hidden border border-gris-perla/20 transition-all duration-300 hover:shadow-xl hover:shadow-taupe/5 cursor-pointer"
     >
       {/* PRODUCT IMAGE CONTAINER */}
-      <div className="relative aspect-square overflow-hidden bg-crema">
+      <div className="relative aspect-square overflow-hidden bg-[#FAF8F5] flex items-center justify-center p-3">
         <img
           src={product.image}
           alt={product.name}
           referrerPolicy="no-referrer"
-          className={`w-full h-full object-cover ${product.imagePosition || 'object-center'} transform group-hover:scale-105 transition-transform duration-700 ease-out`}
+          className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500 ease-out"
         />
         {/* CATEGORY TAG */}
         <span className="absolute top-4 left-4 bg-crema/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-[10px] font-medium tracking-wider uppercase text-taupe-dark border border-blanco-roto/50">

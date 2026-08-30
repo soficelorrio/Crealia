@@ -130,12 +130,14 @@ export default function CartDrawer() {
                           className="flex gap-3 bg-blanco-roto p-3.5 rounded-2xl border border-gris-perla/20 items-center shadow-sm"
                         >
                           {/* PRODUCT IMAGE */}
-                          <img
-                            src={item.product.image}
-                            alt={item.product.name}
-                            referrerPolicy="no-referrer"
-                            className="w-16 h-16 object-cover rounded-xl border border-gris-perla/10 bg-crema flex-shrink-0"
-                          />
+                          <div className="w-16 h-16 rounded-xl border border-gris-perla/10 bg-[#FAF8F5] p-1 flex items-center justify-center flex-shrink-0 overflow-hidden">
+                            <img
+                              src={item.product.image}
+                              alt={item.product.name}
+                              referrerPolicy="no-referrer"
+                              className="w-full h-full object-contain"
+                            />
+                          </div>
 
                           {/* PRODUCT DETAILS */}
                           <div className="flex-1 min-w-0">

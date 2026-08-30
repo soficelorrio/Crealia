@@ -65,13 +65,13 @@ export default function ProductDetailModal({ product, onClose }: ProductDetailMo
         </button>
 
         {/* LEFT COLUMN: IMAGE */}
-        <div className="w-full md:w-1/2 aspect-square md:aspect-auto md:h-full relative bg-blanco-roto/40 flex items-center justify-center p-6 sm:p-8 md:p-12 border-b md:border-b-0 md:border-r border-gris-perla/20 flex-shrink-0">
-          <div className="w-full h-full rounded-2xl overflow-hidden shadow-sm border border-gris-perla/10 relative group">
+        <div className="w-full md:w-1/2 aspect-square md:aspect-auto md:h-full relative bg-blanco-roto/40 flex items-center justify-center p-4 sm:p-6 md:p-8 border-b md:border-b-0 md:border-r border-gris-perla/20 flex-shrink-0">
+          <div className="w-full h-full rounded-2xl overflow-hidden shadow-sm border border-gris-perla/10 relative group bg-[#FAF8F5] flex items-center justify-center p-4">
             <img
               src={product.image}
               alt={product.name}
               referrerPolicy="no-referrer"
-              className={`w-full h-full object-cover ${product.imagePosition || 'object-center'} transform hover:scale-105 transition-transform duration-700 ease-out`}
+              className="w-full h-full object-contain transform hover:scale-105 transition-transform duration-500 ease-out"
             />
             
             {/* FLOATING CATEGORY TAG */}
