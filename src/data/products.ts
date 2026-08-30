@@ -15,6 +15,50 @@ export const BRAND_CONFIG = {
 
 export const PRODUCTS: Product[] = [
   {
+    id: 'collar-flash',
+    name: 'Collar Flash',
+    category: 'necklace',
+    description: 'Collar moderno y llamativo con un brillo único, pensado para darle un toque de energía a cualquier estilo.',
+    pricePlaceholder: '$20.000',
+    image: '/images/collar_flash.jpg',
+    imagePosition: 'object-bottom',
+    details: ['Acero inoxidable', 'Diseño exclusivo y enérgico', 'Terminación pulida brillante', 'Ideal para destacar tu look'],
+    dimensions: '42 cm'
+  },
+  {
+    id: 'collar-venom',
+    name: 'Collar Venom',
+    category: 'necklace',
+    description: 'Collar con impronta de carácter y presencia distinguida, sofisticado y audaz.',
+    pricePlaceholder: '$20.000',
+    image: '/images/collar_venom.jpg',
+    imagePosition: 'object-bottom',
+    details: ['Acero inoxidable', 'Estilo con carácter y presencia', 'Acabado pulido de alta calidad', 'Combina fuerza y elegancia'],
+    dimensions: '45 cm'
+  },
+  {
+    id: 'collar-soul',
+    name: 'Collar Soul',
+    category: 'necklace',
+    description: 'Collar delicado y sofisticado con un dije sutil lleno de significado, ideal para complementar tu esencia con elegancia atemporal.',
+    pricePlaceholder: '$16.000',
+    image: '/images/collar_soul.jpg',
+    imagePosition: 'object-bottom',
+    details: ['Acero inoxidable', 'Dije delicado y significativo', 'Diseño fino y armonioso', 'Brillo inalterable para todos los días', 'Perfecto para layering'],
+    dimensions: '40 cm'
+  },
+  {
+    id: 'collar-summer',
+    name: 'Collar Summer',
+    category: 'necklace',
+    description: 'Collar fresco, luminoso y versátil, inspirado en la calidez y liviandad del verano.',
+    pricePlaceholder: '$15.000',
+    image: '/images/collar_summer.jpg',
+    imagePosition: 'object-[center_90%]',
+    details: ['Acero inoxidable', 'Diseño fresco y liviano', 'Luminosidad sutil', 'Confortable para uso diario'],
+    dimensions: '40 cm'
+  },
+  {
     id: 'collar-nara',
     name: 'Collar Nara',
     category: 'necklace',
