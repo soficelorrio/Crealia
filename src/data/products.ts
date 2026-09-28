@@ -276,7 +276,7 @@ export const PRODUCTS: Product[] = [
     pricePlaceholder: '$16.000',
     image: '/images/collar_volans.jpg',
     details: ['Dije de ala calada', 'Brillo sutil', 'Ideal para usar todos los días'],
-    dimensions: '44 cm'
+    dimensions: '48 cm'
   },
   {
     id: 'pulsera-syra',
@@ -306,7 +306,7 @@ export const PRODUCTS: Product[] = [
     pricePlaceholder: '$16.000',
     image: '/images/collar_calypso.jpg',
     details: ['Dije de sol grabado', 'Estética minimalista', 'Largo intermedio ideal para layering'],
-    dimensions: '51 cm'
+    dimensions: '48 cm'
   },
   {
     id: 'collar-halo',
