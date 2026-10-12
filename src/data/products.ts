@@ -22,8 +22,18 @@ export const PRODUCTS: Product[] = [
     pricePlaceholder: '$15.000',
     image: '/images/choker_cosmo.jpg',
     imagePosition: 'object-bottom',
-    details: ['Acero inoxidable', 'Diseño estilo choker', 'Largo al cuello con extensor regulable', 'Brillo inalterable y cómodo para uso diario'],
-    dimensions: '35 cm + 5 cm de extensor'
+    details: ['Acero inoxidable', 'Diseño estilo choker', 'Largo adaptable para diferentes amarres', 'Brillo inalterable y cómodo para uso diario'],
+    dimensions: '130 cm'
+  },
+  {
+    id: 'choker-cosmo-silver',
+    name: 'Choker Cosmo Silver',
+    category: 'necklace',
+    description: 'Gargantilla tipo choker en versión plateada, delicada y moderna, con brillo sutil que enmarca el cuello.',
+    pricePlaceholder: '$15.000',
+    image: '',
+    details: ['Acero inoxidable', 'Diseño estilo choker plateado', 'Largo adaptable de 130 cm', 'Brillo inalterable para uso diario'],
+    dimensions: '130 cm'
   },
   {
     id: 'choker-desire',
@@ -33,8 +43,8 @@ export const PRODUCTS: Product[] = [
     pricePlaceholder: '$15.000',
     image: '/images/choker_desire.jpg',
     imagePosition: 'object-bottom',
-    details: ['Acero inoxidable', 'Diseño delicado al cuello', 'Terminación pulida brillante', 'Ideal para usar solo o en capas'],
-    dimensions: '35 cm + 5 cm de extensor'
+    details: ['Acero inoxidable', 'Diseño delicado', 'Terminación pulida brillante', 'Ideal para usar solo o en capas'],
+    dimensions: '130 cm'
   },
   {
     id: 'choker-sunshine',
@@ -44,8 +54,8 @@ export const PRODUCTS: Product[] = [
     pricePlaceholder: '$15.000',
     image: '/images/choker_sunshine.jpg',
     imagePosition: 'object-bottom',
-    details: ['Acero inoxidable', 'Tono dorado cálido y luminoso', 'Diseño sutil y versátil', 'Cierre seguro con extensor'],
-    dimensions: '35 cm + 5 cm de extensor'
+    details: ['Acero inoxidable', 'Tono cálido y luminoso', 'Diseño sutil y versátil', 'Largo adaptable de 130 cm'],
+    dimensions: '130 cm'
   },
   {
     id: 'choker-sunshine-silver',
@@ -55,8 +65,48 @@ export const PRODUCTS: Product[] = [
     pricePlaceholder: '$15.000',
     image: '/images/choker_sunshine_silver.jpg',
     imagePosition: 'object-bottom',
-    details: ['Acero inoxidable', 'Acabado plateado brillante', 'Estilo minimalista atemporal', 'Ajuste cómodo con extensor'],
-    dimensions: '35 cm + 5 cm de extensor'
+    details: ['Acero inoxidable', 'Acabado plateado brillante', 'Estilo minimalista atemporal', 'Largo adaptable de 130 cm'],
+    dimensions: '130 cm'
+  },
+  {
+    id: 'choker-venom',
+    name: 'Choker Venom',
+    category: 'necklace',
+    description: 'Choker de estilo audaz y contemporáneo con carácter marcado y presencia distinguida.',
+    pricePlaceholder: '$15.000',
+    image: '',
+    details: ['Acero inoxidable', 'Diseño audaz y moderno', 'Terminación de alta calidad', 'Largo adaptable de 130 cm'],
+    dimensions: '130 cm'
+  },
+  {
+    id: 'choker-night',
+    name: 'Choker Night',
+    category: 'necklace',
+    description: 'Choker magnético y nocturno, diseñado para aportar sofisticación y misterio a tu escote.',
+    pricePlaceholder: '$15.000',
+    image: '',
+    details: ['Acero inoxidable', 'Inspiración nocturna y moderna', 'Largo de 130 cm para múltiples amarres', 'Brillo sutil'],
+    dimensions: '130 cm'
+  },
+  {
+    id: 'choker-proximo-lanzamiento',
+    name: 'Choker (Próximo Lanzamiento)',
+    category: 'necklace',
+    description: 'Nuevo modelo de choker en desarrollo. Próximo lanzamiento exclusivo de la nueva colección de Crealia.',
+    pricePlaceholder: '$15.000',
+    image: '',
+    details: ['Acero inoxidable', 'Próximo lanzamiento exclusivo', 'Largo de 130 cm', 'Diseño vanguardista'],
+    dimensions: '130 cm'
+  },
+  {
+    id: 'collar-demi',
+    name: 'Collar Demi',
+    category: 'necklace',
+    description: 'Collar delicado con un balance ideal de brillo y sutileza, perfecto para complementar tu escote con armonía.',
+    pricePlaceholder: '$15.000',
+    image: '',
+    details: ['Acero inoxidable', 'Diseño sutil y minimalista', 'Caída delicada al cuello', 'Ideal para uso diario y layering'],
+    dimensions: '38 cm'
   },
   {
     id: 'collar-flash',
@@ -97,8 +147,7 @@ export const PRODUCTS: Product[] = [
     category: 'necklace',
     description: 'Collar fresco, luminoso y versátil, inspirado en la calidez y liviandad del verano.',
     pricePlaceholder: '$15.000',
-    image: '/images/collar_summer.jpg',
-    imagePosition: 'object-[center_90%]',
+    image: '',
     details: ['Acero inoxidable', 'Diseño fresco y liviano', 'Luminosidad sutil', 'Confortable para uso diario'],
     dimensions: '40 cm'
   },
@@ -114,28 +163,6 @@ export const PRODUCTS: Product[] = [
     dimensions: '40 cm + 5 cm de extensor'
   },
   {
-    id: 'collar-alma-dorado',
-    name: 'Collar Alma Dorado',
-    category: 'necklace',
-    description: 'Collar dorado delicado con un brillo cálido y sofisticado.',
-    pricePlaceholder: '$18.000',
-    image: '/images/collara_alma_dorado.jpg',
-    imagePosition: 'object-bottom',
-    details: ['Acero inoxidable', 'Tono dorado brillante y cálido', 'Diseño fino y delicado', 'Ideal para llevar solo o en capas'],
-    dimensions: '42 cm'
-  },
-  {
-    id: 'collar-alma-plateado',
-    name: 'Collar Alma Plateado',
-    category: 'necklace',
-    description: 'Collar plateado delicado con diseño minimalista, luminoso y atemporal.',
-    pricePlaceholder: '$18.000',
-    image: '/images/collar_alma_plateado.jpg',
-    imagePosition: 'object-bottom',
-    details: ['Acero inoxidable', 'Acabado plateado brillante', 'Estilo minimalista e intemporal', 'Largo versátil para todo tipo de escote'],
-    dimensions: '42 cm'
-  },
-  {
     id: 'collar-heart',
     name: 'Collar Heart',
     category: 'necklace',
@@ -144,28 +171,6 @@ export const PRODUCTS: Product[] = [
     image: '/images/collar_heart.jpg',
     details: ['Dije de corazón romántico', 'Terminación pulida de alto brillo', 'Diseño delicado e ideal para regalar'],
     dimensions: '38 cm'
-  },
-  {
-    id: 'pulsera-atlas',
-    name: 'Pulsera Atlas',
-    category: 'bracelet',
-    forMen: true,
-    description: 'Pulsera de eslabones con mayor presencia y estructura moderna.',
-    pricePlaceholder: '$10.000',
-    image: '/images/pulsera_atlas.jpg',
-    details: ['Eslabón con carácter', 'Diseño firme y elegante', 'Aporta un estilo único'],
-    dimensions: '19 cm'
-  },
-  {
-    id: 'pulsera-roma',
-    name: 'Pulsera Roma',
-    category: 'bracelet',
-    forMen: true,
-    description: 'Pulsera de eslabón fino y diseño equilibrado, sobria y cómoda.',
-    pricePlaceholder: '$10.000',
-    image: '/images/pulsera_roma.jpg',
-    details: ['Eslabón fino pulido', 'Confortable para el uso diario', 'Cierre seguro'],
-    dimensions: '20 cm'
   },
   {
     id: 'collar-cruzia',
@@ -236,7 +241,8 @@ export const PRODUCTS: Product[] = [
     pricePlaceholder: '$10.000',
     image: '/images/pulsera_nova.jpg',
     details: ['Esferas minimalistas', 'Diseño moderno y ligero', 'Cierre de mosquetón seguro'],
-    dimensions: '19 cm'
+    dimensions: '19 cm',
+    outOfStock: true
   },
   {
     id: 'collar-alaska',
@@ -317,6 +323,36 @@ export const PRODUCTS: Product[] = [
     image: '/images/collar_halo.jpg',
     details: ['Largo regulable', 'Sutil y confortable', 'Diseño exclusivo con dijes colgantes'],
     dimensions: '38,5 cm'
+  },
+  {
+    id: 'collar-eclipse',
+    name: 'Collar Eclipse',
+    category: 'necklace',
+    description: 'Collar nuevo inspirado en el misterio del eclipse, con un diseño geométrico sutil, luminoso y contemporáneo.',
+    pricePlaceholder: '$16.000',
+    image: '',
+    details: ['Acero inoxidable', 'Diseño celestial y contemporáneo', 'Brillo pulido inalterable', 'Cómodo para uso diario'],
+    dimensions: '42 cm'
+  },
+  {
+    id: 'collar-eclipse-estrellas',
+    name: 'Collar Eclipse con Estrellas',
+    category: 'necklace',
+    description: 'Collar nuevo que combina la esencia del eclipse con delicados destellos de estrellas suspendidas.',
+    pricePlaceholder: '$18.000',
+    image: '',
+    details: ['Acero inoxidable', 'Detalles celestiales y estrellas colgantes', 'Acabado pulido brillante', 'Ideal para layering'],
+    dimensions: '42 cm + 5 cm de extensor'
+  },
+  {
+    id: 'pulsera-ocean',
+    name: 'Pulsera Ocean',
+    category: 'bracelet',
+    description: 'Pulsera nueva inspirada en la calma y el movimiento fluido del mar, sutil y elegante para todos los días.',
+    pricePlaceholder: '$10.000',
+    image: '',
+    details: ['Acero inoxidable', 'Diseño fresco y fluido', 'Cierre seguro con extensor regulable', 'Ideal para usar todos los días'],
+    dimensions: '18 cm'
   }
 ];
 

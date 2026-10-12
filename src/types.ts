@@ -9,6 +9,7 @@ export interface Product {
   details?: string[];
   dimensions?: string;
   imagePosition?: string;
+  outOfStock?: boolean;
 }
 
 export interface CareItem {

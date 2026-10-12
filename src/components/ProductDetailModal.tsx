@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, MessageCircle, Instagram, Ruler, ChevronRight, ShoppingBag, Plus, Minus, Check } from 'lucide-react';
+import { X, MessageCircle, Instagram, Ruler, ChevronRight, ShoppingBag, Plus, Minus, Check, Camera } from 'lucide-react';
 import { Product } from '../types';
 import { BRAND_CONFIG } from '../data/products';
 import { useCart } from '../context/CartContext';
@@ -21,6 +21,7 @@ export default function ProductDetailModal({ product, onClose }: ProductDetailMo
   const instagramDirectUrl = `https://ig.me/m/${BRAND_CONFIG.instagram}`;
 
   const handleAddToCart = () => {
+    if (product.outOfStock) return;
     addToCart(product, quantity);
     setAdded(true);
     setTimeout(() => setAdded(false), 2500);
@@ -67,17 +68,32 @@ export default function ProductDetailModal({ product, onClose }: ProductDetailMo
         {/* LEFT COLUMN: IMAGE */}
         <div className="w-full md:w-1/2 aspect-square md:aspect-auto md:h-full relative bg-blanco-roto/40 flex items-center justify-center p-4 sm:p-6 md:p-8 border-b md:border-b-0 md:border-r border-gris-perla/20 flex-shrink-0">
           <div className="w-full h-full rounded-2xl overflow-hidden shadow-sm border border-gris-perla/10 relative group bg-[#FAF8F5] flex items-center justify-center p-4">
-            <img
-              src={product.image}
-              alt={product.name}
-              referrerPolicy="no-referrer"
-              className="w-full h-full object-contain transform hover:scale-105 transition-transform duration-500 ease-out"
-            />
+            {product.image ? (
+              <img
+                src={product.image}
+                alt={product.name}
+                referrerPolicy="no-referrer"
+                className="w-full h-full object-contain transform hover:scale-105 transition-transform duration-500 ease-out"
+              />
+            ) : (
+              <div className="w-full h-full flex flex-col items-center justify-center text-center p-6 bg-crema/40 rounded-xl border border-dashed border-taupe/30">
+                <Camera className="w-12 h-12 text-taupe/50 mb-3" />
+                <span className="text-base font-serif text-taupe-dark font-medium">Foto en actualización</span>
+                <span className="text-xs text-dark-soft/60 mt-1 font-sans">Próximamente nueva imagen</span>
+              </div>
+            )}
             
             {/* FLOATING CATEGORY TAG */}
             <span className="absolute top-4 left-4 bg-crema/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-medium tracking-widest uppercase text-taupe-dark border border-blanco-roto/50">
               {product.category === 'necklace' ? 'Collar' : 'Pulsera'}
             </span>
+
+            {/* FLOATING OUT OF STOCK TAG */}
+            {product.outOfStock && (
+              <span className="absolute top-4 right-4 bg-stone-900/85 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase text-white border border-white/20 shadow-sm">
+                Sin Stock
+              </span>
+            )}
           </div>
         </div>
 
@@ -146,38 +162,47 @@ export default function ProductDetailModal({ product, onClose }: ProductDetailMo
 
           {/* ACTION BUTTONS & CART CONTROLS */}
           <div className="space-y-3 pt-4 border-t border-gris-perla/20">
-            {/* ADD TO CART SECTION */}
-            <div className="flex items-center gap-3">
-              {/* QUANTITY SELECTOR */}
-              <div className="flex items-center bg-blanco-roto border border-gris-perla/30 rounded-full px-3 py-2">
-                <button
-                  onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}
-                  className="p-1 hover:bg-crema rounded-full text-dark-soft/70 hover:text-taupe-dark transition-colors"
-                  aria-label="Disminuir cantidad"
-                >
-                  <Minus size={14} />
-                </button>
-                <span className="px-3 text-xs font-sans font-semibold text-dark-soft min-w-[20px] text-center">
-                  {quantity}
+            {/* ADD TO CART SECTION OR OUT OF STOCK NOTICE */}
+            {product.outOfStock ? (
+              <div className="flex items-center justify-between p-3.5 bg-stone-100 rounded-2xl border border-stone-200 text-stone-600 text-xs">
+                <span className="font-medium">Sin stock por el momento</span>
+                <span className="text-[10px] uppercase font-bold tracking-wider text-stone-500 bg-white px-2.5 py-1 rounded-full border border-stone-200">
+                  Agotado
                 </span>
+              </div>
+            ) : (
+              <div className="flex items-center gap-3">
+                {/* QUANTITY SELECTOR */}
+                <div className="flex items-center bg-blanco-roto border border-gris-perla/30 rounded-full px-3 py-2">
+                  <button
+                    onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}
+                    className="p-1 hover:bg-crema rounded-full text-dark-soft/70 hover:text-taupe-dark transition-colors"
+                    aria-label="Disminuir cantidad"
+                  >
+                    <Minus size={14} />
+                  </button>
+                  <span className="px-3 text-xs font-sans font-semibold text-dark-soft min-w-[20px] text-center">
+                    {quantity}
+                  </span>
+                  <button
+                    onClick={() => setQuantity((prev) => prev + 1)}
+                    className="p-1 hover:bg-crema rounded-full text-dark-soft/70 hover:text-taupe-dark transition-colors"
+                    aria-label="Aumentar cantidad"
+                  >
+                    <Plus size={14} />
+                  </button>
+                </div>
+
+                {/* ADD TO CART BUTTON */}
                 <button
-                  onClick={() => setQuantity((prev) => prev + 1)}
-                  className="p-1 hover:bg-crema rounded-full text-dark-soft/70 hover:text-taupe-dark transition-colors"
-                  aria-label="Aumentar cantidad"
+                  onClick={handleAddToCart}
+                  className="flex-1 inline-flex items-center justify-center gap-2 bg-taupe hover:bg-taupe-dark text-blanco-roto px-6 py-3.5 rounded-full text-xs font-semibold tracking-widest uppercase transition-all duration-300 shadow-md shadow-taupe/10 cursor-pointer"
                 >
-                  <Plus size={14} />
+                  {added ? <Check size={16} /> : <ShoppingBag size={16} />}
+                  <span>{added ? '¡Agregado!' : 'Agregar al Carrito'}</span>
                 </button>
               </div>
-
-              {/* ADD TO CART BUTTON */}
-              <button
-                onClick={handleAddToCart}
-                className="flex-1 inline-flex items-center justify-center gap-2 bg-taupe hover:bg-taupe-dark text-blanco-roto px-6 py-3.5 rounded-full text-xs font-semibold tracking-widest uppercase transition-all duration-300 shadow-md shadow-taupe/10 cursor-pointer"
-              >
-                {added ? <Check size={16} /> : <ShoppingBag size={16} />}
-                <span>{added ? '¡Agregado!' : 'Agregar al Carrito'}</span>
-              </button>
-            </div>
+            )}
 
             {/* ADDED TO CART NOTIFICATION */}
             <AnimatePresence>

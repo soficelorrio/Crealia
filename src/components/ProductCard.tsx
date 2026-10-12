@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { MessageCircle, Info, ShoppingBag, Check } from 'lucide-react';
+import { MessageCircle, Info, ShoppingBag, Check, Camera } from 'lucide-react';
 import { Product } from '../types';
 import { BRAND_CONFIG } from '../data/products';
 import { useState, MouseEvent } from 'react';
@@ -21,6 +21,7 @@ export default function ProductCard({ product, onSelect }: ProductCardProps) {
 
   const handleAddToCart = (e: MouseEvent) => {
     e.stopPropagation();
+    if (product.outOfStock) return;
     addToCart(product, 1);
     setAdded(true);
     setTimeout(() => setAdded(false), 1500);
@@ -37,17 +38,32 @@ export default function ProductCard({ product, onSelect }: ProductCardProps) {
     >
       {/* PRODUCT IMAGE CONTAINER */}
       <div className="relative aspect-square overflow-hidden bg-[#FAF8F5] flex items-center justify-center p-3">
-        <img
-          src={product.image}
-          alt={product.name}
-          referrerPolicy="no-referrer"
-          className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500 ease-out"
-        />
+        {product.image ? (
+          <img
+            src={product.image}
+            alt={product.name}
+            referrerPolicy="no-referrer"
+            className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500 ease-out"
+          />
+        ) : (
+          <div className="w-full h-full flex flex-col items-center justify-center text-center p-4 bg-crema/40 rounded-xl border border-dashed border-taupe/30">
+            <Camera className="w-8 h-8 text-taupe/50 mb-2" />
+            <span className="text-xs font-serif text-taupe-dark font-medium">Foto en actualización</span>
+            <span className="text-[10px] text-dark-soft/60 mt-1 font-sans">Próximamente nueva imagen</span>
+          </div>
+        )}
         {/* CATEGORY TAG */}
         <span className="absolute top-4 left-4 bg-crema/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-[10px] font-medium tracking-wider uppercase text-taupe-dark border border-blanco-roto/50">
           {product.category === 'necklace' ? 'Collar' : 'Pulsera'}
           {product.forMen && <span className="text-taupe font-semibold ml-1">· Hombre</span>}
         </span>
+
+        {/* OUT OF STOCK BADGE */}
+        {product.outOfStock && (
+          <span className="absolute top-4 right-4 bg-stone-900/85 backdrop-blur-sm px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase text-white shadow-sm border border-white/20 z-10">
+            Sin Stock
+          </span>
+        )}
 
         {/* DETAILS BUTTON OVERLAY */}
         {product.details && (
@@ -56,7 +72,7 @@ export default function ProductCard({ product, onSelect }: ProductCardProps) {
               e.stopPropagation();
               setShowDetails(!showDetails);
             }}
-            className="absolute bottom-4 right-4 bg-blanco-roto/95 hover:bg-taupe hover:text-blanco-roto transition-colors p-2 rounded-full shadow shadow-dark-soft/5 text-taupe duration-300 cursor-pointer z-10"
+            className={`absolute bottom-4 right-4 bg-blanco-roto/95 hover:bg-taupe hover:text-blanco-roto transition-colors p-2 rounded-full shadow shadow-dark-soft/5 text-taupe duration-300 cursor-pointer z-10`}
             title="Ver especificaciones"
           >
             <Info size={16} />
@@ -67,9 +83,16 @@ export default function ProductCard({ product, onSelect }: ProductCardProps) {
       {/* CONTENT */}
       <div className="flex-1 p-5 flex flex-col justify-between">
         <div>
-          <h3 className="font-serif text-lg text-taupe-dark font-medium group-hover:text-taupe transition-colors duration-300 mb-1">
-            {product.name}
-          </h3>
+          <div className="flex items-start justify-between gap-2 mb-1">
+            <h3 className="font-serif text-lg text-taupe-dark font-medium group-hover:text-taupe transition-colors duration-300">
+              {product.name}
+            </h3>
+            {product.outOfStock && (
+              <span className="text-[10px] font-medium text-stone-500 uppercase tracking-wider bg-stone-100 px-2 py-0.5 rounded-full border border-stone-200">
+                Agotado
+              </span>
+            )}
+          </div>
           <p className="font-sans text-xs sm:text-sm text-dark-soft/85 leading-relaxed mb-4 min-h-[40px]">
             {product.description}
           </p>
@@ -103,18 +126,24 @@ export default function ProductCard({ product, onSelect }: ProductCardProps) {
           </div>
 
           <div className="flex items-center gap-1.5">
-            <button
-              onClick={handleAddToCart}
-              className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-medium tracking-wider uppercase transition-all duration-300 cursor-pointer ${
-                added
-                  ? 'bg-emerald-700 text-white'
-                  : 'bg-taupe hover:bg-taupe-dark text-blanco-roto shadow-sm'
-              }`}
-              title="Agregar al carrito"
-            >
-              {added ? <Check size={14} /> : <ShoppingBag size={14} />}
-              <span>{added ? 'Agregado' : 'Agregar'}</span>
-            </button>
+            {product.outOfStock ? (
+              <span className="inline-flex items-center px-3 py-1.5 rounded-full text-[11px] font-medium tracking-wider uppercase bg-stone-100 text-stone-500 border border-stone-200">
+                Sin stock
+              </span>
+            ) : (
+              <button
+                onClick={handleAddToCart}
+                className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-medium tracking-wider uppercase transition-all duration-300 cursor-pointer ${
+                  added
+                    ? 'bg-emerald-700 text-white'
+                    : 'bg-taupe hover:bg-taupe-dark text-blanco-roto shadow-sm'
+                }`}
+                title="Agregar al carrito"
+              >
+                {added ? <Check size={14} /> : <ShoppingBag size={14} />}
+                <span>{added ? 'Agregado' : 'Agregar'}</span>
+              </button>
+            )}
 
             <a
               href={whatsappUrl}
@@ -122,7 +151,7 @@ export default function ProductCard({ product, onSelect }: ProductCardProps) {
               rel="noreferrer"
               onClick={(e) => e.stopPropagation()}
               className="p-2 bg-blanco-roto hover:bg-taupe/10 text-taupe-dark border border-taupe/20 rounded-full transition-colors duration-300"
-              title="Consultar por WhatsApp"
+              title={product.outOfStock ? "Consultar reposición por WhatsApp" : "Consultar por WhatsApp"}
             >
               <MessageCircle size={15} />
             </a>

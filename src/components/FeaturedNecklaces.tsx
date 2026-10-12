@@ -1,6 +1,6 @@
 import { useState, MouseEvent } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Star, Flame, Sparkles, ShoppingBag, Check, Eye } from 'lucide-react';
+import { Star, Flame, Sparkles, ShoppingBag, Check, Eye, Camera } from 'lucide-react';
 import { PRODUCTS } from '../data/products';
 import { Product } from '../types';
 import { useCart } from '../context/CartContext';
@@ -11,7 +11,7 @@ const FEATURED_NECKLACE_IDS = [
   { id: 'collar-nara', tag: '1º Más Pedido', badgeColor: 'bg-amber-100 text-amber-900 border-amber-300' },
   { id: 'collar-volans', tag: 'Favorito del Mes', badgeColor: 'bg-rose-100 text-rose-900 border-rose-300' },
   { id: 'collar-alaska', tag: 'El Infaltable', badgeColor: 'bg-stone-200 text-stone-900 border-stone-300' },
-  { id: 'collar-alma-dorado', tag: 'Top Trending', badgeColor: 'bg-purple-100 text-purple-900 border-purple-300' },
+  { id: 'collar-lunna', tag: 'Top Trending', badgeColor: 'bg-purple-100 text-purple-900 border-purple-300' },
 ];
 
 export default function FeaturedNecklaces() {
@@ -72,12 +72,20 @@ export default function FeaturedNecklaces() {
               >
                 {/* IMAGE & BADGE */}
                 <div className="relative aspect-square overflow-hidden bg-[#FAF8F5] flex items-center justify-center p-3">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-contain transform group-hover:scale-108 transition-transform duration-500 ease-out"
-                  />
+                  {product.image ? (
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      referrerPolicy="no-referrer"
+                      className="w-full h-full object-contain transform group-hover:scale-108 transition-transform duration-500 ease-out"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex flex-col items-center justify-center text-center p-4 bg-crema/40 rounded-xl border border-dashed border-taupe/30">
+                      <Camera className="w-8 h-8 text-taupe/50 mb-2" />
+                      <span className="text-xs font-serif text-taupe-dark font-medium">Foto en actualización</span>
+                      <span className="text-[10px] text-dark-soft/60 mt-1 font-sans">Próximamente nueva imagen</span>
+                    </div>
+                  )}
 
                   {/* BEST SELLER BADGE */}
                   <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5">

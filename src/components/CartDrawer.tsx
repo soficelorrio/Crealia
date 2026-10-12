@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'motion/react';
-import { X, Trash2, Plus, Minus, MessageCircle, ShoppingBag, ArrowRight } from 'lucide-react';
+import { X, Trash2, Plus, Minus, MessageCircle, ShoppingBag, ArrowRight, Camera } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { BRAND_CONFIG } from '../data/products';
 
@@ -131,12 +131,16 @@ export default function CartDrawer() {
                         >
                           {/* PRODUCT IMAGE */}
                           <div className="w-16 h-16 rounded-xl border border-gris-perla/10 bg-[#FAF8F5] p-1 flex items-center justify-center flex-shrink-0 overflow-hidden">
-                            <img
-                              src={item.product.image}
-                              alt={item.product.name}
-                              referrerPolicy="no-referrer"
-                              className="w-full h-full object-contain"
-                            />
+                            {item.product.image ? (
+                              <img
+                                src={item.product.image}
+                                alt={item.product.name}
+                                referrerPolicy="no-referrer"
+                                className="w-full h-full object-contain"
+                              />
+                            ) : (
+                              <Camera className="w-6 h-6 text-taupe/40" />
+                            )}
                           </div>
 
                           {/* PRODUCT DETAILS */}

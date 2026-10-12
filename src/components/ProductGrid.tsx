@@ -152,7 +152,7 @@ export default function ProductGrid() {
           {/* POPULAR SEARCH QUICK TAGS */}
           <div className="flex flex-wrap items-center justify-center gap-2 text-xs text-dark-soft/75">
             <span className="font-medium text-taupe-dark mr-1">Búsquedas populares:</span>
-            {['Choker', 'Flash', 'Venom', 'Soul', 'Summer', 'Alma', 'Nara', 'Atlas'].map((tag) => (
+            {['Choker', 'Demi', 'Eclipse', 'Ocean', 'Venom', 'Flash', 'Lunna', 'Volans'].map((tag) => (
               <button
                 key={tag}
                 onClick={() => {
