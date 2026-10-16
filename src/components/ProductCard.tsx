@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { MessageCircle, Info, ShoppingBag, Check, Camera } from 'lucide-react';
+import { MessageCircle, Info, ShoppingBag, Check, Camera, Sparkles } from 'lucide-react';
 import { Product } from '../types';
 import { BRAND_CONFIG } from '../data/products';
 import { useState, MouseEvent } from 'react';
@@ -14,6 +14,7 @@ interface ProductCardProps {
 export default function ProductCard({ product, onSelect }: ProductCardProps) {
   const [showDetails, setShowDetails] = useState(false);
   const [added, setAdded] = useState(false);
+  const [imgError, setImgError] = useState(false);
   const { addToCart } = useCart();
 
   const queryMessage = BRAND_CONFIG.productInquiryMessage(product.name);
@@ -21,7 +22,7 @@ export default function ProductCard({ product, onSelect }: ProductCardProps) {
 
   const handleAddToCart = (e: MouseEvent) => {
     e.stopPropagation();
-    if (product.outOfStock) return;
+    if (product.outOfStock || product.isUpcoming) return;
     addToCart(product, 1);
     setAdded(true);
     setTimeout(() => setAdded(false), 1500);
@@ -38,13 +39,20 @@ export default function ProductCard({ product, onSelect }: ProductCardProps) {
     >
       {/* PRODUCT IMAGE CONTAINER */}
       <div className="relative aspect-square overflow-hidden bg-[#FAF8F5] flex items-center justify-center p-3">
-        {product.image ? (
+        {product.image && !imgError ? (
           <img
             src={product.image}
             alt={product.name}
+            onError={() => setImgError(true)}
             referrerPolicy="no-referrer"
-            className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500 ease-out"
+            className={`w-full h-full object-contain ${product.imagePosition || 'object-center'} transform group-hover:scale-105 transition-transform duration-500 ease-out`}
           />
+        ) : product.isUpcoming ? (
+          <div className="w-full h-full flex flex-col items-center justify-center text-center p-4 bg-gradient-to-b from-crema/60 to-taupe/10 rounded-xl border border-taupe/20">
+            <Sparkles className="w-7 h-7 text-taupe mb-2 animate-pulse" />
+            <span className="text-xs font-serif text-taupe-dark font-medium tracking-wide">Próximo Lanzamiento</span>
+            <span className="text-[10px] text-dark-soft/70 mt-1 font-sans">Exclusivo nueva colección</span>
+          </div>
         ) : (
           <div className="w-full h-full flex flex-col items-center justify-center text-center p-4 bg-crema/40 rounded-xl border border-dashed border-taupe/30">
             <Camera className="w-8 h-8 text-taupe/50 mb-2" />
@@ -58,12 +66,16 @@ export default function ProductCard({ product, onSelect }: ProductCardProps) {
           {product.forMen && <span className="text-taupe font-semibold ml-1">· Hombre</span>}
         </span>
 
-        {/* OUT OF STOCK BADGE */}
-        {product.outOfStock && (
+        {/* OUT OF STOCK OR UPCOMING BADGE */}
+        {product.outOfStock ? (
           <span className="absolute top-4 right-4 bg-stone-900/85 backdrop-blur-sm px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase text-white shadow-sm border border-white/20 z-10">
             Sin Stock
           </span>
-        )}
+        ) : product.isUpcoming ? (
+          <span className="absolute top-4 right-4 bg-taupe/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-[10px] font-semibold tracking-wider uppercase text-blanco-roto shadow-sm border border-blanco-roto/20 z-10">
+            Próximamente
+          </span>
+        ) : null}
 
         {/* DETAILS BUTTON OVERLAY */}
         {product.details && (
@@ -129,6 +141,10 @@ export default function ProductCard({ product, onSelect }: ProductCardProps) {
             {product.outOfStock ? (
               <span className="inline-flex items-center px-3 py-1.5 rounded-full text-[11px] font-medium tracking-wider uppercase bg-stone-100 text-stone-500 border border-stone-200">
                 Sin stock
+              </span>
+            ) : product.isUpcoming ? (
+              <span className="inline-flex items-center px-3 py-1.5 rounded-full text-[11px] font-medium tracking-wider uppercase bg-taupe/15 text-taupe-dark border border-taupe/30">
+                Próximamente
               </span>
             ) : (
               <button

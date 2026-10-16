@@ -16,13 +16,13 @@ export const BRAND_CONFIG = {
 export const PRODUCTS: Product[] = [
   {
     id: 'choker-cosmo',
-    name: 'Choker Cosmo',
+    name: 'Choker Cosmo Gold',
     category: 'necklace',
-    description: 'Gargantilla tipo choker delicada y moderna, con un brillo sutil que enmarca el cuello con distinción.',
+    description: 'Gargantilla tipo choker en versión dorada cálida, delicada y moderna, con un brillo sutil que enmarca el cuello con distinción.',
     pricePlaceholder: '$15.000',
     image: '/images/choker_cosmo.jpg',
     imagePosition: 'object-bottom',
-    details: ['Acero inoxidable', 'Diseño estilo choker', 'Largo adaptable para diferentes amarres', 'Brillo inalterable y cómodo para uso diario'],
+    details: ['Acero inoxidable', 'Tono dorado cálido', 'Diseño estilo choker', 'Largo adaptable de 130 cm', 'Brillo inalterable y cómodo para uso diario'],
     dimensions: '130 cm'
   },
   {
@@ -31,7 +31,8 @@ export const PRODUCTS: Product[] = [
     category: 'necklace',
     description: 'Gargantilla tipo choker en versión plateada, delicada y moderna, con brillo sutil que enmarca el cuello.',
     pricePlaceholder: '$15.000',
-    image: '',
+    image: '/images/choker_cosmo_silver.jpg',
+    imagePosition: 'object-bottom',
     details: ['Acero inoxidable', 'Diseño estilo choker plateado', 'Largo adaptable de 130 cm', 'Brillo inalterable para uso diario'],
     dimensions: '130 cm'
   },
@@ -48,13 +49,13 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'choker-sunshine',
-    name: 'Choker Sunshine',
+    name: 'Choker Sunshine Gold',
     category: 'necklace',
-    description: 'Choker radiante con detalles luminosos que capturan la luz con calidez y energía.',
+    description: 'Choker radiante en versión dorada cálida con detalles luminosos que capturan la luz con calidez y energía.',
     pricePlaceholder: '$15.000',
     image: '/images/choker_sunshine.jpg',
     imagePosition: 'object-bottom',
-    details: ['Acero inoxidable', 'Tono cálido y luminoso', 'Diseño sutil y versátil', 'Largo adaptable de 130 cm'],
+    details: ['Acero inoxidable', 'Tono dorado cálido y luminoso', 'Diseño sutil y versátil', 'Largo adaptable de 130 cm'],
     dimensions: '130 cm'
   },
   {
@@ -74,7 +75,8 @@ export const PRODUCTS: Product[] = [
     category: 'necklace',
     description: 'Choker de estilo audaz y contemporáneo con carácter marcado y presencia distinguida.',
     pricePlaceholder: '$15.000',
-    image: '',
+    image: '/images/choker_venom.jpg',
+    imagePosition: 'object-bottom',
     details: ['Acero inoxidable', 'Diseño audaz y moderno', 'Terminación de alta calidad', 'Largo adaptable de 130 cm'],
     dimensions: '130 cm'
   },
@@ -84,7 +86,8 @@ export const PRODUCTS: Product[] = [
     category: 'necklace',
     description: 'Choker magnético y nocturno, diseñado para aportar sofisticación y misterio a tu escote.',
     pricePlaceholder: '$15.000',
-    image: '',
+    image: '/images/choker_night.jpg',
+    imagePosition: 'object-bottom',
     details: ['Acero inoxidable', 'Inspiración nocturna y moderna', 'Largo de 130 cm para múltiples amarres', 'Brillo sutil'],
     dimensions: '130 cm'
   },
@@ -95,8 +98,19 @@ export const PRODUCTS: Product[] = [
     description: 'Nuevo modelo de choker en desarrollo. Próximo lanzamiento exclusivo de la nueva colección de Crealia.',
     pricePlaceholder: '$15.000',
     image: '',
+    isUpcoming: true,
     details: ['Acero inoxidable', 'Próximo lanzamiento exclusivo', 'Largo de 130 cm', 'Diseño vanguardista'],
     dimensions: '130 cm'
+  },
+  {
+    id: 'pulsera-ocean',
+    name: 'Pulsera Ocean',
+    category: 'bracelet',
+    description: 'Pulsera plateada con dijes marinos (caracol, caballito de mar y concha marina), fresca y delicada para todos los días.',
+    pricePlaceholder: '$10.000',
+    image: '/images/pulsera_ocean.jpg',
+    details: ['Acero inoxidable', 'Dijes marinos con relieve detallado', 'Cierre seguro con extensor regulable', 'Ideal para usar todos los días'],
+    dimensions: '18 cm'
   },
   {
     id: 'collar-demi',
@@ -104,7 +118,8 @@ export const PRODUCTS: Product[] = [
     category: 'necklace',
     description: 'Collar delicado con un balance ideal de brillo y sutileza, perfecto para complementar tu escote con armonía.',
     pricePlaceholder: '$15.000',
-    image: '',
+    image: '/images/collar_demi.jpg',
+    imagePosition: 'object-bottom',
     details: ['Acero inoxidable', 'Diseño sutil y minimalista', 'Caída delicada al cuello', 'Ideal para uso diario y layering'],
     dimensions: '38 cm'
   },
@@ -145,10 +160,10 @@ export const PRODUCTS: Product[] = [
     id: 'collar-summer',
     name: 'Collar Summer',
     category: 'necklace',
-    description: 'Collar fresco, luminoso y versátil, inspirado en la calidez y liviandad del verano.',
+    description: 'Collar dorado delicado con dije solar brillante, fresco y luminoso, inspirado en la calidez y liviandad del verano.',
     pricePlaceholder: '$15.000',
-    image: '',
-    details: ['Acero inoxidable', 'Diseño fresco y liviano', 'Luminosidad sutil', 'Confortable para uso diario'],
+    image: '/images/collar_summer.png',
+    details: ['Acero inoxidable', 'Dije solar con punto de luz brillante', 'Tono dorado cálido', 'Diseño fresco y liviano', 'Confortable para uso diario'],
     dimensions: '40 cm'
   },
   {
@@ -343,16 +358,6 @@ export const PRODUCTS: Product[] = [
     image: '',
     details: ['Acero inoxidable', 'Detalles celestiales y estrellas colgantes', 'Acabado pulido brillante', 'Ideal para layering'],
     dimensions: '42 cm + 5 cm de extensor'
-  },
-  {
-    id: 'pulsera-ocean',
-    name: 'Pulsera Ocean',
-    category: 'bracelet',
-    description: 'Pulsera nueva inspirada en la calma y el movimiento fluido del mar, sutil y elegante para todos los días.',
-    pricePlaceholder: '$10.000',
-    image: '',
-    details: ['Acero inoxidable', 'Diseño fresco y fluido', 'Cierre seguro con extensor regulable', 'Ideal para usar todos los días'],
-    dimensions: '18 cm'
   }
 ];
 

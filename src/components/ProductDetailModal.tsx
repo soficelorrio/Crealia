@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, MessageCircle, Instagram, Ruler, ChevronRight, ShoppingBag, Plus, Minus, Check, Camera } from 'lucide-react';
+import { X, MessageCircle, Instagram, Ruler, ChevronRight, ShoppingBag, Plus, Minus, Check, Camera, Sparkles } from 'lucide-react';
 import { Product } from '../types';
 import { BRAND_CONFIG } from '../data/products';
 import { useCart } from '../context/CartContext';
@@ -14,6 +14,7 @@ export default function ProductDetailModal({ product, onClose }: ProductDetailMo
   const [copied, setCopied] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const [added, setAdded] = useState(false);
+  const [imgError, setImgError] = useState(false);
   const { addToCart, openCart } = useCart();
 
   const queryMessage = BRAND_CONFIG.productInquiryMessage(product.name);
@@ -21,7 +22,7 @@ export default function ProductDetailModal({ product, onClose }: ProductDetailMo
   const instagramDirectUrl = `https://ig.me/m/${BRAND_CONFIG.instagram}`;
 
   const handleAddToCart = () => {
-    if (product.outOfStock) return;
+    if (product.outOfStock || product.isUpcoming) return;
     addToCart(product, quantity);
     setAdded(true);
     setTimeout(() => setAdded(false), 2500);
@@ -68,13 +69,20 @@ export default function ProductDetailModal({ product, onClose }: ProductDetailMo
         {/* LEFT COLUMN: IMAGE */}
         <div className="w-full md:w-1/2 aspect-square md:aspect-auto md:h-full relative bg-blanco-roto/40 flex items-center justify-center p-4 sm:p-6 md:p-8 border-b md:border-b-0 md:border-r border-gris-perla/20 flex-shrink-0">
           <div className="w-full h-full rounded-2xl overflow-hidden shadow-sm border border-gris-perla/10 relative group bg-[#FAF8F5] flex items-center justify-center p-4">
-            {product.image ? (
+            {product.image && !imgError ? (
               <img
                 src={product.image}
                 alt={product.name}
+                onError={() => setImgError(true)}
                 referrerPolicy="no-referrer"
-                className="w-full h-full object-contain transform hover:scale-105 transition-transform duration-500 ease-out"
+                className={`w-full h-full object-contain ${product.imagePosition || 'object-center'} transform hover:scale-105 transition-transform duration-500 ease-out`}
               />
+            ) : product.isUpcoming ? (
+              <div className="w-full h-full flex flex-col items-center justify-center text-center p-6 bg-gradient-to-b from-crema/70 to-taupe/15 rounded-xl border border-taupe/20">
+                <Sparkles className="w-12 h-12 text-taupe mb-3 animate-pulse" />
+                <span className="text-lg font-serif text-taupe-dark font-medium">Próximo Lanzamiento</span>
+                <span className="text-xs text-dark-soft/75 mt-1 font-sans">Diseño exclusivo en preparación</span>
+              </div>
             ) : (
               <div className="w-full h-full flex flex-col items-center justify-center text-center p-6 bg-crema/40 rounded-xl border border-dashed border-taupe/30">
                 <Camera className="w-12 h-12 text-taupe/50 mb-3" />
@@ -88,12 +96,16 @@ export default function ProductDetailModal({ product, onClose }: ProductDetailMo
               {product.category === 'necklace' ? 'Collar' : 'Pulsera'}
             </span>
 
-            {/* FLOATING OUT OF STOCK TAG */}
-            {product.outOfStock && (
+            {/* FLOATING OUT OF STOCK OR UPCOMING TAG */}
+            {product.outOfStock ? (
               <span className="absolute top-4 right-4 bg-stone-900/85 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase text-white border border-white/20 shadow-sm">
                 Sin Stock
               </span>
-            )}
+            ) : product.isUpcoming ? (
+              <span className="absolute top-4 right-4 bg-taupe/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-semibold tracking-widest uppercase text-blanco-roto border border-blanco-roto/20 shadow-sm">
+                Próximamente
+              </span>
+            ) : null}
           </div>
         </div>
 
@@ -162,12 +174,19 @@ export default function ProductDetailModal({ product, onClose }: ProductDetailMo
 
           {/* ACTION BUTTONS & CART CONTROLS */}
           <div className="space-y-3 pt-4 border-t border-gris-perla/20">
-            {/* ADD TO CART SECTION OR OUT OF STOCK NOTICE */}
+            {/* ADD TO CART SECTION OR OUT OF STOCK / UPCOMING NOTICE */}
             {product.outOfStock ? (
               <div className="flex items-center justify-between p-3.5 bg-stone-100 rounded-2xl border border-stone-200 text-stone-600 text-xs">
                 <span className="font-medium">Sin stock por el momento</span>
                 <span className="text-[10px] uppercase font-bold tracking-wider text-stone-500 bg-white px-2.5 py-1 rounded-full border border-stone-200">
                   Agotado
+                </span>
+              </div>
+            ) : product.isUpcoming ? (
+              <div className="flex items-center justify-between p-3.5 bg-taupe/10 rounded-2xl border border-taupe/20 text-taupe-dark text-xs">
+                <span className="font-medium">Próximo lanzamiento exclusivo</span>
+                <span className="text-[10px] uppercase font-semibold tracking-wider text-taupe-dark bg-crema px-2.5 py-1 rounded-full border border-taupe/30">
+                  Muy pronto
                 </span>
               </div>
             ) : (

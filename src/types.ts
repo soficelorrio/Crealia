@@ -10,6 +10,7 @@ export interface Product {
   dimensions?: string;
   imagePosition?: string;
   outOfStock?: boolean;
+  isUpcoming?: boolean;
 }
 
 export interface CareItem {
