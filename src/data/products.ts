@@ -75,8 +75,7 @@ export const PRODUCTS: Product[] = [
     category: 'necklace',
     description: 'Choker de estilo audaz y contemporáneo con carácter marcado y presencia distinguida.',
     pricePlaceholder: '$15.000',
-    image: '/images/choker_venom.jpg',
-    imagePosition: 'object-bottom',
+    image: '',
     details: ['Acero inoxidable', 'Diseño audaz y moderno', 'Terminación de alta calidad', 'Largo adaptable de 130 cm'],
     dimensions: '130 cm'
   },
@@ -118,8 +117,7 @@ export const PRODUCTS: Product[] = [
     category: 'necklace',
     description: 'Collar delicado con un balance ideal de brillo y sutileza, perfecto para complementar tu escote con armonía.',
     pricePlaceholder: '$15.000',
-    image: '/images/collar_demi.jpg',
-    imagePosition: 'object-bottom',
+    image: '',
     details: ['Acero inoxidable', 'Diseño sutil y minimalista', 'Caída delicada al cuello', 'Ideal para uso diario y layering'],
     dimensions: '38 cm'
   },
