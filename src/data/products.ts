@@ -15,6 +15,15 @@ export const BRAND_CONFIG = {
 
 export const PRODUCTS: Product[] = [
   {
+    id: 'pulsera-mystery',
+    name: 'Mystery Bracelet',
+    category: 'bracelet',
+    description: 'Edición especial sorpresa. Una pulsera seleccionada exclusivamente para vos de nuestra colección de joyas. Dejate sorprender por un diseño único y lleno de magia.',
+    pricePlaceholder: '$10.000',
+    image: '/images/mystery_bracelet.jpg',
+    dimensions: '18 cm'
+  },
+  {
     id: 'choker-cosmo',
     name: 'Choker Cosmo Gold',
     category: 'necklace',

@@ -18,6 +18,7 @@ import ProductDetailModal from './ProductDetailModal';
 
 // Curated list of all-time community top favorites
 const FEATURED_ITEMS_CONFIG = [
+  { id: 'pulsera-mystery', tag: '✨ Edición Especial', badgeColor: 'bg-amber-100 text-amber-900 border-amber-300' },
   { id: 'collar-nara', tag: '1º Más Pedido', badgeColor: 'bg-amber-100 text-amber-900 border-amber-300' },
   { id: 'choker-cosmo', tag: 'Choker Estrella', badgeColor: 'bg-emerald-100 text-emerald-900 border-emerald-300' },
   { id: 'collar-volans', tag: 'Favorito del Mes', badgeColor: 'bg-rose-100 text-rose-900 border-rose-300' },
