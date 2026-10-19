@@ -24,6 +24,15 @@ export const PRODUCTS: Product[] = [
     dimensions: '18 cm'
   },
   {
+    id: 'collar-mystery',
+    name: 'Mystery Necklace',
+    category: 'necklace',
+    description: 'Edición especial sorpresa. Un collar seleccionado exclusivamente para vos de nuestra colección de joyas. Dejate sorprender por un diseño único y lleno de magia.',
+    pricePlaceholder: '$17.000',
+    image: '/images/mystery_necklace.jpg',
+    dimensions: '42 cm'
+  },
+  {
     id: 'choker-cosmo',
     name: 'Choker Cosmo Gold',
     category: 'necklace',
@@ -352,7 +361,7 @@ export const PRODUCTS: Product[] = [
     category: 'necklace',
     description: 'Collar nuevo inspirado en el misterio del eclipse, con un diseño geométrico sutil, luminoso y contemporáneo.',
     pricePlaceholder: '$16.000',
-    image: '',
+    image: '/images/eclipse.jpg',
     details: ['Acero inoxidable', 'Diseño celestial y contemporáneo', 'Brillo pulido inalterable', 'Cómodo para uso diario'],
     dimensions: '42 cm'
   },

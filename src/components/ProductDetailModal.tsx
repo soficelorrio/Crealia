@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, MessageCircle, Instagram, Ruler, ChevronRight, ShoppingBag, Plus, Minus, Check, Camera, Sparkles } from 'lucide-react';
 import { Product } from '../types';
@@ -16,6 +16,11 @@ export default function ProductDetailModal({ product, onClose }: ProductDetailMo
   const [added, setAdded] = useState(false);
   const [imgError, setImgError] = useState(false);
   const { addToCart, openCart } = useCart();
+
+  useEffect(() => {
+    setImgError(false);
+    setQuantity(1);
+  }, [product.id, product.image]);
 
   const queryMessage = BRAND_CONFIG.productInquiryMessage(product.name);
   const whatsappUrl = `https://wa.me/${BRAND_CONFIG.whatsappNumber}?text=${encodeURIComponent(queryMessage)}`;
@@ -69,21 +74,21 @@ export default function ProductDetailModal({ product, onClose }: ProductDetailMo
         {/* LEFT COLUMN: IMAGE */}
         <div className="w-full md:w-1/2 aspect-square md:aspect-auto md:h-full relative bg-blanco-roto/40 flex items-center justify-center p-4 sm:p-6 md:p-8 border-b md:border-b-0 md:border-r border-gris-perla/20 flex-shrink-0">
           <div className="w-full h-full rounded-2xl overflow-hidden shadow-sm border border-gris-perla/10 relative group bg-[#FAF8F5] flex items-center justify-center p-4">
-            {product.image && !imgError ? (
+            {(product.image || (product.id === 'pulsera-mystery' ? '/images/mystery_bracelet.jpg' : product.id === 'collar-mystery' ? '/images/mystery_necklace.jpg' : '')) && !imgError ? (
               <img
-                src={product.image}
+                src={product.image || (product.id === 'pulsera-mystery' ? '/images/mystery_bracelet.jpg' : product.id === 'collar-mystery' ? '/images/mystery_necklace.jpg' : '')}
                 alt={product.name}
-                onError={() => setImgError(true)}
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (target.src.includes('.jpg')) {
+                    target.src = target.src.replace('.jpg', '.png');
+                  } else {
+                    setImgError(true);
+                  }
+                }}
                 referrerPolicy="no-referrer"
                 className={`w-full h-full object-contain ${product.imagePosition || 'object-center'} transform hover:scale-105 transition-transform duration-500 ease-out`}
               />
-            ) : product.id === 'pulsera-mystery' ? (
-              <div className="w-full h-full flex flex-col items-center justify-center text-center p-6 bg-gradient-to-b from-[#FAF8F5] via-crema/70 to-taupe/15 rounded-xl border border-taupe/30 relative overflow-hidden">
-                <Sparkles className="w-12 h-12 text-taupe mb-3 animate-pulse" />
-                <span className="text-xl font-serif text-taupe-dark font-semibold tracking-wider uppercase">Mystery Bracelet</span>
-                <span className="text-xs text-dark-soft/80 mt-1 font-sans">Diseño sorpresa exclusivo de nuestra colección</span>
-                <span className="text-[10px] text-taupe font-medium mt-2 uppercase tracking-widest bg-taupe/15 px-3 py-1 rounded-full border border-taupe/30">Edición Especial Sorpresa</span>
-              </div>
             ) : product.isUpcoming ? (
               <div className="w-full h-full flex flex-col items-center justify-center text-center p-6 bg-gradient-to-b from-crema/70 to-taupe/15 rounded-xl border border-taupe/20">
                 <Sparkles className="w-12 h-12 text-taupe mb-3 animate-pulse" />

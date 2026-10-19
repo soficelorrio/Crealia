@@ -28,7 +28,7 @@ export default function ProductCard({ product, onSelect }: ProductCardProps) {
     setTimeout(() => setAdded(false), 1500);
   };
 
-  const isMystery = product.id === 'pulsera-mystery';
+  const isMystery = product.id === 'pulsera-mystery' || product.id === 'collar-mystery';
 
   return (
     <motion.div
@@ -49,7 +49,14 @@ export default function ProductCard({ product, onSelect }: ProductCardProps) {
           <img
             src={product.image}
             alt={product.name}
-            onError={() => setImgError(true)}
+            onError={(e) => {
+              const target = e.currentTarget;
+              if (target.src.includes('.jpg')) {
+                target.src = target.src.replace('.jpg', '.png');
+              } else {
+                setImgError(true);
+              }
+            }}
             referrerPolicy="no-referrer"
             className={`w-full h-full object-contain ${product.imagePosition || 'object-center'} transform group-hover:scale-105 transition-transform duration-500 ease-out`}
           />
@@ -129,27 +136,6 @@ export default function ProductCard({ product, onSelect }: ProductCardProps) {
           <p className={`font-sans ${isMystery ? 'text-xs sm:text-sm text-dark-soft/90 mb-3' : 'text-xs sm:text-sm text-dark-soft/85 mb-4'} leading-relaxed min-h-[40px]`}>
             {product.description}
           </p>
-
-          {isMystery && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 sm:gap-2 mb-4 p-3 rounded-xl bg-amber-50/80 border border-amber-200/70 text-[11px] text-taupe-dark">
-              <div className="flex items-center gap-1.5 font-medium">
-                <span className="text-amber-600">🎁</span>
-                <span>Modelo sorpresa exclusivo</span>
-              </div>
-              <div className="flex items-center gap-1.5 font-medium">
-                <span className="text-amber-600">✨</span>
-                <span>Acero quirúrgico inalterable</span>
-              </div>
-              <div className="flex items-center gap-1.5 font-medium">
-                <span className="text-amber-600">📏</span>
-                <span>Largo adaptable con extensor</span>
-              </div>
-              <div className="flex items-center gap-1.5 font-medium">
-                <span className="text-amber-600">💛</span>
-                <span>Packaging listo para regalo</span>
-              </div>
-            </div>
-          )}
 
           {/* SLIDE-OUT PRODUCT DETAILS SPECS */}
           {showDetails && product.details && (
