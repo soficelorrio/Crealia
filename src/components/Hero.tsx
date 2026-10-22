@@ -6,7 +6,7 @@ export default function Hero() {
   const instagramUrl = `https://instagram.com/${BRAND_CONFIG.instagram}`;
 
   const handleScrollToCollection = () => {
-    const element = document.getElementById('coleccion');
+    const element = document.getElementById('nuestra-seleccion') || document.getElementById('coleccion');
     if (element) {
       const headerOffset = 80;
       const elementPosition = element.getBoundingClientRect().top;

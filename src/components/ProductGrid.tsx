@@ -54,7 +54,7 @@ export default function ProductGrid() {
     const nameMatch = product.name.toLowerCase().includes(query);
     const descMatch = product.description.toLowerCase().includes(query);
     const catMatch = (product.category === 'necklace' ? 'collar collares' : 'pulsera pulseras').includes(query);
-    const detailsMatch = product.details.some((d) => d.toLowerCase().includes(query));
+    const detailsMatch = Boolean(product.details?.some((d) => d.toLowerCase().includes(query)));
 
     return nameMatch || descMatch || catMatch || detailsMatch;
   });
@@ -68,7 +68,7 @@ export default function ProductGrid() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* SECTION HEADER */}
-        <div className="text-center mb-8 sm:mb-10">
+        <div id="nuestra-seleccion" className="text-center mb-8 sm:mb-10 scroll-mt-24">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blanco-roto border border-gris-perla/30 text-taupe text-[10px] font-medium tracking-[0.2em] uppercase mb-4">
             <Sparkles size={10} />
             Nueva Colección

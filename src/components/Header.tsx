@@ -33,17 +33,26 @@ export default function Header() {
     return () => window.removeEventListener('search-query-changed', handleSyncSearch as EventListener);
   }, []);
 
+  const scrollToCollection = () => {
+    const target = document.getElementById('nuestra-seleccion') || document.getElementById('coleccion');
+    if (target) {
+      const headerOffset = 80;
+      const elementPosition = target.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      // Scroll down if not already at the "Nuestra Selección" section
+      if (Math.abs(window.pageYOffset - offsetPosition) > 40) {
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
+  };
+
   const handleSearchChange = (val: string) => {
     setSearchQuery(val);
     window.dispatchEvent(new CustomEvent('search-query-changed', { detail: { query: val } }));
-    
-    // Auto scroll to collection if user starts typing and isn't at collection section yet
-    if (val.trim()) {
-      const col = document.getElementById('coleccion');
-      if (col && window.scrollY < col.offsetTop - 250) {
-        col.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
+    scrollToCollection();
   };
 
   const clearHeaderSearch = () => {
@@ -56,7 +65,8 @@ export default function Header() {
     if (tab) {
       window.dispatchEvent(new CustomEvent('set-category-tab', { detail: tab }));
     }
-    const element = document.getElementById(id);
+    const targetId = id === 'coleccion' ? 'nuestra-seleccion' : id;
+    const element = document.getElementById(targetId) || document.getElementById(id);
     if (element) {
       const headerOffset = 80;
       const elementPosition = element.getBoundingClientRect().top;
@@ -111,12 +121,12 @@ export default function Header() {
                 type="text"
                 value={searchQuery}
                 onChange={(e) => handleSearchChange(e.target.value)}
-                onFocus={() => {
-                  if (searchQuery.trim()) {
-                    const col = document.getElementById('coleccion');
-                    if (col && window.scrollY < col.offsetTop - 250) {
-                      col.scrollIntoView({ behavior: 'smooth' });
-                    }
+                onFocus={scrollToCollection}
+                onClick={scrollToCollection}
+                onTouchStart={scrollToCollection}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    scrollToCollection();
                   }
                 }}
                 placeholder="Buscar collar o producto (ej: Electra, Corazón, Halo, Volt...)"
