@@ -133,11 +133,11 @@ export const PRODUCTS: Product[] = [
     id: 'collar-demi',
     name: 'Collar Demi',
     category: 'necklace',
-    description: 'Collar delicado con un balance ideal de brillo y sutileza, perfecto para complementar tu escote con armonía.',
+    description: 'Collar delicado con dije de estrella texturada y cadena eslabonada plateada, perfecto para complementar tu escote con armonía y brillo.',
     pricePlaceholder: '$15.000',
-    image: '',
-    details: ['Acero inoxidable', 'Diseño sutil y minimalista', 'Caída delicada al cuello', 'Ideal para uso diario y layering'],
-    dimensions: '38 cm'
+    image: '/images/collar_demi.jpg',
+    details: ['Acero inoxidable', 'Dije de estrella con textura martillada', 'Cadena eslabonada con cierre seguro', 'Ideal para uso diario y layering'],
+    dimensions: '38 cm + 5 cm de extensor'
   },
   {
     id: 'collar-flash',
